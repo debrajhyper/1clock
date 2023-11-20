@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.cdnfonts.com/css/led-dot-matrix');
+
+.App {
+  width: 100vw;
+  height: 100vh;
+}
+
+.clock_area {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.digital {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid red;
+  font-family: 'LED Dot-Matrix', sans-serif;
+  font-size: 4em;
+  font-weight: 400;
+}
+
