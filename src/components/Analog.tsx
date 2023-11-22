@@ -1,7 +1,14 @@
 
 function Analog() {
     return (
-        <div>Analog</div>
+        <div className="analog">
+            <div className="circle"></div>
+            <div className="analog_clock"></div>
+            <div className="shape">
+            <div className="triangle">
+            </div>
+            </div>
+        </div>
     )
 }
 
