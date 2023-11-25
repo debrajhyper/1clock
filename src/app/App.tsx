@@ -38,7 +38,7 @@ function App() {
       <Navbar timeFormatted={timeFormatted} setTimeFormatted={setTimeFormatted} isDigital={isDigital} setIsDigital={setIsDigital}/>
       <main className='clock_area z-50'>
         {
-          isDigital ? <Digital time={time} timeFormatted={timeFormatted} /> : <Analog />
+          isDigital ? <Digital time={time} timeFormatted={timeFormatted} /> : <Analog time={time} />
         }
       </main>
     </div>

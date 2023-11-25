@@ -7,15 +7,24 @@
 .App {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .clock_area {
+  padding-top: 3%;
   height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #164e63;
+  /* background-color: #252063; */
+  background: linear-gradient(160deg, #431c64, #252063);
   color: white;
+  /* position: relative; */
+  /* border: 2px solid blue; */
+  margin: 0 auto;
+  /* padding: 10em; */
+  z-index: 0;
 }
 
 .digital {
@@ -28,66 +37,230 @@
 
 .analog {
   position: relative;
-  border: 2px solid red;
-  padding: 5em;
-  z-index: 100;
+  /* margin-top: 1%; */
+  /* border: 2px solid red; */
+  /* padding: 5em; */
+  /* z-index: 100; */
 }
 
 .analog .circle {
   position: absolute;
-  top: -90%;
-  left: -110%;
-  z-index: 5;
-  width: 14em;
-  height: 14em;
+  top: -70%;
+  left: -90%;
+  /* z-index: 0; */
+  width: 18em;
+  height: 18em;
   border-radius: 50%;
   background-image: linear-gradient(to right, #FFEC4D, #FE9230);
   /* border: 2px solid white; */
 }
 
 
-.analog .shape {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.analog_clock {
+  position: relative;
+  width: 14em;
+  height: 14em;
+  z-index: 100;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  text-align: center;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 25px 45px 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255,255,255,0.5);
+  /* border-right: 1px solid rgba(255,255,255,0.2); */
+  /* border-bottom: 1px solid rgba(255,255,255,0.2); */
+  background-image: url("https://imvpn22.github.io/analog-clock/clock.png");
+  background-position: center center;
+  background-size: cover;
+  /* margin: 8% auto 0; */
+}
+.analog_clock::after {
+  background: rgba(255, 255, 255, 0.9);
+  content: "";
+  width: 10px;
+  height: 10px;
+  /* width: 1px; */
+  /* height: 1px; */
+  border-radius: 50%;
   position: absolute;
-  /* position: relative; */
-  bottom: -12%;
-  right: -112%;
-  z-index: 5;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* border: 2px solid #fff; */
+}
+.hour_hand {
+  width: 6px;
+  height: 50px;
+  position: absolute;
+  top: 27.5%;
+  left: 48.7%;
+  border-radius: 20px;
+  transform-origin: bottom;
+  background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.7));
+}
+
+.min_hand {
+  width: 4px;
+  height: 70px;
+  position: absolute;
+  top: 18.6%;
+  left: 49.1%;
+  border-radius: 20px;
+  transform-origin: bottom;
+  background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.7));
+}
+
+.sec_hand {
+  width: 2px;
+  height: 75px;
+  position: absolute;
+  top: 16.3%;
+  left: 49.6%;
+  border-radius: 20px;
+  transform-origin: bottom;
+  background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.7));
+}
+
+.analog_clock span {
+  position: absolute;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  opacity: 1;
+}
+
+.stick {
+  width: 1.5px;
+  height: 9px;
+  background-color: white;
+}
+
+
+.twelve {
+  top: 11.5px;
+  left: 45.2%;
+}
+
+.one {
+  top: 12.8%;
+  right: 29.1%;
+  rotate: 30deg;
+}
+
+.two {
+  top: 27.8%;
+  right: 14.4%;
+  rotate: 60deg;
+}
+
+.three {
+  right: 7.4%;
+  top: 44.4%;
+  /* rotate: 90deg; */
+}
+
+.four {
+  right: 14.5%;
+  top: 68.4%;
+  rotate: 120deg;
+}
+
+.five {
+  right: 29.2%;
+  top: 83.4%;
+  rotate: 150deg;
+}
+
+.six {
+  bottom: 5%;
+  left: 47.8%;
+  /* rotate: 180deg; */
+}
+
+.seven {
+  left: 29.5%;
+  top: 83.5%;
+  rotate: 210deg;
+}
+
+.eight {
+  left: 14.5%;
+  top: 68.5%;
+  rotate: 240deg;
+}
+
+.nine {
+  left: 8%;
+  top: 44.2%;
+  /* rotate: 270deg; */
+}
+
+.ten {
+  top: 27.8%;
+  left: 14.4%;
+  rotate: 300deg;
+}
+
+.eleven {
+  top: 12.7%;
+  left: 29.3%;
+  rotate: 330deg;
+}
+
+
+
+
+
+
+
+
+
+.analog .shape {
+  /* position: absolute; */
+  position: relative;
+  top: 60px;
+  right: -96%;
 }
 
 .analog .shape .triangle {
-  /* position: absolute; */
-  position: relative;
+  position: absolute;
+  /* position: relative; */
   rotate: 20deg;
-  /* width: 0; */
-	/* height: 0; */
-  /* transform: scale(5); */
-	/* border-left: 25px solid transparent;
-	border-right: 25px solid transparent;
-	border-bottom: 50px solid white; */
-  /* border-top: 20px solid transparent; */
-  /* border-radius: 2px; */
-}
-
-
-.triangle {
-	
-	background-color: #F81469;
+  background-color: #F81469;
 	text-align: left;
 }
-.triangle:before,
-.triangle:after {
+.triangle:before, .triangle:after {
 	content: '';
 	position: absolute;
 	background-color: inherit;
 }
-.triangle,
-.triangle:before,
-.triangle:after {
-	width:  10em;
-	height: 10em;
-	border-top-right-radius: 20%;
+.triangle, .triangle:before, .triangle:after {
+	width:  11em;
+	height: 11em;
+	border-top-right-radius: 25%;
 }
-
 .triangle {
 	transform: rotate(-60deg) skewX(-30deg) scale(1,.866);
 }

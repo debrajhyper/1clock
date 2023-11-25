@@ -6,10 +6,11 @@ function SwitchType({ isDigital, setIsDigital }: SwitchType) {
             <Switch
                 checked={isDigital}
                 onChange={setIsDigital}
-                className={`${isDigital ? 'bg-teal-900' : 'bg-teal-700'} m-2
+                title={isDigital ? 'Switch to Analog Clock' : 'Switch to Digital Clock'}
+                className={`${isDigital ? 'bg-purple-850' : 'bg-purple-1000'} m-2
                 relative inline-flex h-[29px] w-[61px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white/62`}
             >
-                <span className="sr-only">Use setting</span>
+                {/* <span className="sr-only"></span> */}
                 <span
                     aria-hidden="true"
                     className={`${isDigital ? 'translate-x-8' : 'translate-x-0'}

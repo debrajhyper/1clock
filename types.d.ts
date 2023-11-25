@@ -4,7 +4,7 @@ type Clock = {
         minutes: number,
         seconds: number,
     },
-    timeFormatted: boolean
+    timeFormatted?: boolean
 }
 
 // type Clock = {
