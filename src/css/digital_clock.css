@@ -1,0 +1,7 @@
+.digital {
+    display: flex;
+    flex-direction: row;
+    font-family: 'LED Dot-Matrix', sans-serif;
+    font-size: 4.5em;
+    font-weight: 400;
+}

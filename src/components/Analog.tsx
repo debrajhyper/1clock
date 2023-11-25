@@ -1,3 +1,4 @@
+import '../css/analog_clock.css';
 
 function Analog({ time }: Clock) {
     const { hours, minutes, seconds } = time
@@ -6,8 +7,7 @@ function Analog({ time }: Clock) {
         <div className="analog">
             <div className="circle"></div>
             <div className="shape">
-                <div className="triangle">
-                </div>
+                <div className="triangle"></div>
             </div>
             <div className="analog_clock">
                 <div className="hour_hand" style={{ transform: `rotateZ(${hours * 30}deg)` }} />

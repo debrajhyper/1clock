@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import './App.css';
+import Navbar from '../components/Navbar';
 import Analog from '../components/Analog';
 import Digital from '../components/Digital';
-import Navbar from '../components/Navbar';
+import './App.css';
 
 function App() {
   const [time, setTime] = useState({
@@ -31,11 +31,9 @@ function App() {
     return () => clearInterval(intervalId);
   }, [])
 
-  console.log('out ->', time)
-
   return (
     <div className="App">
-      <Navbar timeFormatted={timeFormatted} setTimeFormatted={setTimeFormatted} isDigital={isDigital} setIsDigital={setIsDigital}/>
+      <Navbar timeFormatted={timeFormatted} setTimeFormatted={setTimeFormatted} isDigital={isDigital} setIsDigital={setIsDigital} />
       <main className='clock_area z-50'>
         {
           isDigital ? <Digital time={time} timeFormatted={timeFormatted} /> : <Analog time={time} />
