@@ -1,7 +1,81 @@
 .digital {
+    position: relative;
+}
+
+.digital_clock {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-family: 'LED Dot-Matrix', sans-serif;
-    font-size: 4.5em;
+    
+    position: relative;
+    width: 32em;
+    height: 16em;
+    /* padding: .4em .9em; */
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 25px 45px 5px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 1s ease-in-out;
+    animation: digital_display 1s ease-in-out;
+}
+
+@keyframes digital_display {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    100% {
+        width: 32em;
+        height: 16em;
+        
+    }
+}
+
+.day {
+    /* line-height: .8; */
+    animation: day_display 1s ease-in-out;
+    animation-fill-mode: both;
+    transition: transform .7s ease-in-out;
+}
+
+@keyframes day_display {
+    0% {
+        opacity: 0;
+        font-size: 0;
+    }
+    58% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        font-size: 2em;
+    }
+}
+
+.digits {
+    font-size: 4em;
     font-weight: 400;
+    line-height: .8;
+    animation: digits_display 1s ease-in-out;
+    transition: transform .7s ease-in-out;
+}
+
+@keyframes digits_display {
+    0% {
+        opacity: 0;
+        font-size: 0;
+    }
+    58% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        font-size: 4em;
+    }
 }

@@ -8,16 +8,3 @@
   overflow: hidden;
   transition: all .4s ease-in-out;
 }
-
-.clock_area {
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  padding-top: 3%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background: linear-gradient(160deg, #431c64, #252063);
-  z-index: 0;
-}

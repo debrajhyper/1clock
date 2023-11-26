@@ -1,6 +1,6 @@
 import '../css/digital_clock.css';
 
-function Digital({ time, timeFormatted }: Clock) {
+function Digital({ time, timeFormatted, day }: Clock) {
     const { hours, minutes, seconds } = time
 
     const convertToTwoDigit = (number: number) => {
@@ -16,9 +16,10 @@ function Digital({ time, timeFormatted }: Clock) {
         : `${convertToTwoDigit(hours)}:${convertToTwoDigit(minutes)}:${convertToTwoDigit(seconds)}`;
 
     return (
-        <div className="digital">
-            <p>{formattedTime}</p>
-        </div>
+        <section className="digital_clock">
+            <p className='day'>{day}</p>
+            <p className='digits'>{formattedTime}</p>
+        </section>
     )
 }
 

@@ -2,61 +2,6 @@
     position: relative;
 }
 
-.circle {
-    position: absolute;
-    top: -70%;
-    left: -90%;
-    width: 18em;
-    height: 18em;
-    border-radius: 50%;
-    background-image: linear-gradient(to right, #FFEC4D, #FE9230);
-}
-
-.shape {
-    position: relative;
-    top: 60px;
-    right: -96%;
-}
-
-.shape .triangle {
-    position: absolute;
-    text-align: left;
-    rotate: 20deg;
-    background-color: #F81469;
-}
-
-.triangle:before, .triangle:after {
-    content: '';
-    position: absolute;
-    background-color: inherit;
-}
-
-.triangle, .triangle:before, .triangle:after {
-    width: 11em;
-    height: 11em;
-    border-top-right-radius: 25%;
-}
-
-.triangle {
-    transform: rotate(-60deg) skewX(-30deg) scale(1, .866);
-}
-
-.triangle:before {
-    transform: rotate(-135deg) skewX(-45deg) scale(1.414, .707) translate(0, -50%);
-}
-
-.triangle:after {
-    transform: rotate(135deg) skewY(-45deg) scale(.707, 1.414) translate(50%);
-}
-
-
-
-
-
-
-
-
-
 .analog_clock {
     position: relative;
     width: 14em;
@@ -71,6 +16,19 @@
     /* background-image: url("https://imvpn22.github.io/analog-clock/clock.png"); */
     /* background-position: center center; */
     /* background-size: cover; */
+    transition: all 1s ease-in-out;
+    animation: analog_display 1s ease-in-out;
+}
+
+@keyframes analog_display {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    100% {
+        width: 14em;
+        height: 14em;
+    }
 }
 
 .analog_clock::after {
@@ -86,37 +44,46 @@
     z-index: 2;
 }
 
-.hour_hand {
-    width: 6px;
-    height: 50px;
+.hour_hand, .min_hand, .sec_hand {
     position: absolute;
-    top: 27.5%;
-    left: 48.7%;
     border-radius: 20px;
     transform-origin: bottom;
     background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.7));
+    animation: hands_display 1s ease-in-out;
+    transition: transform .7s ease-in-out;
+}
+
+@keyframes hands_display {
+    0% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.hour_hand {
+    width: 6px;
+    height: 50px;
+    top: 27.5%;
+    left: 48.7%;
 }
 
 .min_hand {
     width: 4px;
     height: 70px;
-    position: absolute;
     top: 18.6%;
     left: 49.1%;
-    border-radius: 20px;
-    transform-origin: bottom;
-    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.7));
 }
 
 .sec_hand {
     width: 2px;
     height: 75px;
-    position: absolute;
     top: 16.3%;
     left: 49.6%;
-    border-radius: 20px;
-    transform-origin: bottom;
-    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.7));
 }
 
 .analog_clock span {
@@ -131,6 +98,22 @@
     width: 1.5px;
     height: 9px;
     background-color: white;
+}
+
+.twelve, .three, .six, .nine {
+    animation: digit_display 1s linear;
+}
+
+@keyframes digit_display {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .twelve {

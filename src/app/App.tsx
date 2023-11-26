@@ -1,28 +1,38 @@
 import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
-import Analog from '../components/Analog';
-import Digital from '../components/Digital';
+import ClockArea from '../components/ClockArea';
 import './App.css';
 
 function App() {
   const [time, setTime] = useState({
-    hours: new Date().getHours(),
-    minutes: new Date().getMinutes(),
-    seconds: new Date().getSeconds(),
+    hours: 60,
+    minutes: 60,
+    seconds: 60,
   })
+  const [day, setDay] = useState('');
 
   const [timeFormatted, setTimeFormatted] = useState(false);
   const [isDigital, setIsDigital] = useState(false);
 
+  function dayFormatter(number: number) {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    return days[number]
+  }
+
   useEffect(() => {
+    const date = new Date();
+    console.log(date.getDay())
     function getClock() {
-      const date = new Date();
       setTime({
         hours: date.getHours(),
         minutes: date.getMinutes(),
         seconds: date.getSeconds()
       })
     }
+
+    setDay(
+      dayFormatter(date.getDay())
+    )
 
     const intervalId = setInterval(() => {
       getClock()
@@ -34,11 +44,7 @@ function App() {
   return (
     <div className="App">
       <Navbar timeFormatted={timeFormatted} setTimeFormatted={setTimeFormatted} isDigital={isDigital} setIsDigital={setIsDigital} />
-      <main className='clock_area z-50'>
-        {
-          isDigital ? <Digital time={time} timeFormatted={timeFormatted} /> : <Analog time={time} />
-        }
-      </main>
+      <ClockArea isDigital={isDigital} time={time} timeFormatted={timeFormatted} day={day} />
     </div>
   );
 }
