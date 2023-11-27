@@ -39,6 +39,7 @@
 
 .day {
     /* line-height: .8; */
+    letter-spacing: .5rem;
     animation: day_display 1s ease-in-out;
     animation-fill-mode: both;
     transition: transform .7s ease-in-out;
@@ -62,6 +63,7 @@
     font-size: 4em;
     font-weight: 400;
     line-height: .8;
+    letter-spacing: .2rem;
     animation: digits_display 1s ease-in-out;
     transition: transform .7s ease-in-out;
 }
@@ -77,5 +79,129 @@
     100% {
         opacity: 1;
         font-size: 4em;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    /* For tablets: */
+    .digital_clock {
+        width: 28em;
+        height: 13em;
+        animation: digital_display_tablet 1s ease-in-out;
+    }
+    @keyframes digital_display_tablet {
+        0% {
+            width: 0;
+            height: 0;
+        }
+        100% {
+            width: 28em;
+            height: 13em;
+            
+        }
+    }
+    .day {
+        /* line-height: .8; */
+        letter-spacing: .4rem;
+        font-size: 1.6em;
+        animation: day_display_tablet 1s ease-in-out;
+    }
+    
+    @keyframes day_display_tablet {
+        0% {
+            opacity: 0;
+            font-size: 0;
+        }
+        58% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            font-size: 1.6em;
+        }
+    }
+    
+    .digits {
+        font-size: 3em;
+        font-weight: 400;
+        line-height: .8;
+        letter-spacing: .2rem;
+        animation: digits_display_tablet 1s ease-in-out;
+    }
+    
+    @keyframes digits_display_tablet {
+        0% {
+            opacity: 0;
+            font-size: 0;
+        }
+        58% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            font-size: 3em;
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    /* For mobile: */
+    .digital_clock {
+        width: 22em;
+        height: 12em;
+        animation: digital_display_mobile 1s ease-in-out;
+    }
+    @keyframes digital_display_mobile {
+        0% {
+            width: 0;
+            height: 0;
+        }
+        100% {
+            width: 22em;
+            height: 12em;
+            
+        }
+    }
+    .day {
+        /* line-height: .8; */
+        letter-spacing: .3rem;
+        font-size: 1.5em;
+        animation: day_display_mobile 1s ease-in-out;
+    }
+    
+    @keyframes day_display_mobile {
+        0% {
+            opacity: 0;
+            font-size: 0;
+        }
+        58% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            font-size: 1.5em;
+        }
+    }
+    
+    .digits {
+        font-size: 2.6em;
+        font-weight: 400;
+        line-height: .8;
+        letter-spacing: .2rem;
+        animation: digits_display_mobile 1s ease-in-out;
+    }
+    
+    @keyframes digits_display_mobile {
+        0% {
+            opacity: 0;
+            font-size: 0;
+        }
+        58% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            font-size: 2.6em;
+        }
     }
 }

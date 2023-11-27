@@ -23,6 +23,7 @@ function App() {
     const date = new Date();
     console.log(date.getDay())
     function getClock() {
+      const date = new Date();
       setTime({
         hours: date.getHours(),
         minutes: date.getMinutes(),

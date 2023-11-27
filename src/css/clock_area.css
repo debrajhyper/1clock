@@ -11,11 +11,11 @@
     /* z-index: 0; */
     transition: all 2s ease-in-out;
     user-select: none;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 .analog, .digital {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 34em;
     height: 18em;
     display: flex;
@@ -119,4 +119,66 @@
 }
 .triangle:after {
     transform: rotate(135deg) skewY(-45deg) scale(.707, 1.414) translate(50%);
+}
+
+
+
+@media only screen and (max-width: 800px) {
+    /* For tablets: */
+    .analog, .digital {
+        width: 30em;
+        height: 15em;
+    }
+    .analog .circle {
+        width: 16em;
+        height: 16em;
+    }
+    .digital .circle {
+        width: 12em;
+        height: 12em;
+    }
+    .analog .triangle, .analog .triangle:before, .analog .triangle:after {
+        width: 10em;
+        height: 10em;
+    }
+    .digital .triangle, .digital .triangle:before, .digital .triangle:after {
+        width: 7em;
+        height: 7em;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    /* For mobiles: */
+    .analog, .digital {
+        width: 23em;
+        height: 14em;
+    }
+    .analog .circle {
+        width: 13em;
+        height: 13em;
+    }
+    .digital .circle {
+        top: 57%;
+        left: -6%;
+        width: 11em;
+        height: 11em;
+    }
+    .analog .shape {
+        top: 45%;
+        right: 26%;
+    }
+    .digital .shape {
+        top: 30%;
+        right: 34%;
+        rotate: -83deg;
+    }
+    .analog .triangle, .analog .triangle:before, .analog .triangle:after {
+        width: 7em;
+        height: 7em;
+    }
+    .digital .triangle, .digital .triangle:before, .digital .triangle:after {
+        width: 6em;
+        height: 6em;
+    }
 }
