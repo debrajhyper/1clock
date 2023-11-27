@@ -2,9 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+@font-face {
+  font-family: 'LED Dot-Matrix';
+  font-style: normal;
+  font-weight: normal;
+  src: local('LED Dot-Matrix'), url('../fonts/led-dot-matrix_woff/LED Dot-Matrix.woff') format('woff');
+}
+
 .App {
+  position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   transition: all .4s ease-in-out;
+  user-select: none;
+  font-family: 'LED Dot-Matrix', sans-serif;
+  /* font-family: 'Mukta', sans-serif; */
 }

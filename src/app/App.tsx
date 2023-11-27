@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import ClockArea from '../components/ClockArea';
+import Footer from '../components/Footer';
 import './App.css';
 
 function App() {
@@ -21,7 +22,6 @@ function App() {
 
   useEffect(() => {
     const date = new Date();
-    console.log(date.getDay())
     function getClock() {
       const date = new Date();
       setTime({
@@ -42,10 +42,15 @@ function App() {
     return () => clearInterval(intervalId);
   }, [])
 
+  useEffect(() => {
+    document.title = `${isDigital ? 'Digital' : 'Analog'} - 1clock`
+  }, [isDigital])
+
   return (
     <div className="App">
       <Navbar timeFormatted={timeFormatted} setTimeFormatted={setTimeFormatted} isDigital={isDigital} setIsDigital={setIsDigital} />
       <ClockArea isDigital={isDigital} time={time} timeFormatted={timeFormatted} day={day} />
+      <Footer/>
     </div>
   );
 }

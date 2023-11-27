@@ -8,7 +8,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'LED Dot-Matrix', sans-serif;
+    /* font-family: 'LED Dot-Matrix', sans-serif; */
     
     position: relative;
     width: 32em;
@@ -39,7 +39,7 @@
 
 .day {
     /* line-height: .8; */
-    letter-spacing: .5rem;
+    letter-spacing: .4rem;
     animation: day_display 1s ease-in-out;
     animation-fill-mode: both;
     transition: transform .7s ease-in-out;

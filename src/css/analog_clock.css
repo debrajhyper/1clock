@@ -88,9 +88,9 @@
 
 .analog_clock span {
     position: absolute;
-    font-family: "Source Sans Pro", sans-serif;
+    /* font-family: "Source Sans Pro", sans-serif; */
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 400;
     opacity: 1;
 }
 
