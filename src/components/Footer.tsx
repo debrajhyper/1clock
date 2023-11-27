@@ -66,14 +66,24 @@ function Footer() {
                                         as="h3"
                                         className="font-['Mukta'] text-5xl font-extrabold text-white/40 leading-6 flex items-center"
                                     >
-                                        <img src={icon} alt='icon' className="w-10 -mr-4"/>
+                                        <img src={icon} alt='icon' className="w-10 -mr-4" />
                                         1clock
                                     </Dialog.Title>
                                     <div className="mt-4">
-                                        <p className="text-sm">
-                                            Your payment has been successfully submitted. We’ve sent
-                                            you an email with all of the details of your order.
-                                        </p>
+                                        <div>
+                                            <p className="text-sm">
+                                                1Clock, blending analog charm and digital precision in a sleek glass morphic design, with AM/PM cues for a sophisticated time-telling experience.
+                                                Redefining elegance in timekeeping.
+                                            </p>
+                                            <p className='mt-2 text-sm font-bold text-white/40 tracking-wide'>
+                                                Designed by
+                                                <h3 className='text-xl text-white'>
+                                                    <a className='outline-0' href='https://www.linkedin.com/in/debrajkarmakar010/' target='_blank' rel="noreferrer">
+                                                        Debraj Karmakar
+                                                    </a>
+                                                </h3>
+                                            </p>
+                                        </div>
                                     </div>
 
                                     <div className="mt-10">
