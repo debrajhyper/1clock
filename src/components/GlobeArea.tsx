@@ -68,16 +68,6 @@ function GlobeArea() {
         }
 
 
-        const options = {
-            timeZone: co1?.timezones?.[0]?.zoneName, // Time zone
-            gmtOffset: co1?.timezones?.[0]?.gmtOffset, // GMT offset in hours
-            gmtName: co1?.timezones?.[0]?.gmtOffsetName, // GMT name
-        };
-
-        // console.log('world clock -> ', getCountryTime(options));
-
-
-
         setPov({
             lat: lat,
             lng: lng,
