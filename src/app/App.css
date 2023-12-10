@@ -13,11 +13,27 @@
 
 .App {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100svw;
+  height: 100svh;
   overflow: hidden;
   transition: all .4s ease-in-out;
   user-select: none;
   font-family: 'LED Dot-Matrix', sans-serif;
   /* font-family: 'Mukta', sans-serif; */
+  color: white;
+  background: radial-gradient(#252063, #431c64 );
+  background: linear-gradient(160deg, #431c64, #252063 );
+  /* color: #ffffff00; */
+}
+
+/*  disable touch highlighting for mobile screens */
+@media only screen and (max-width: 500px) {
+  body {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.scene-container .scene-tooltip {
+  font-family: 'LED Dot-Matrix', sans-serif !important;
+  font-weight: 200;
 }

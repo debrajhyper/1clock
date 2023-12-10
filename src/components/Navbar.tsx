@@ -9,6 +9,7 @@ type NavbarProps = {
     setIsDigital: SwitchType['setIsDigital'],
 }
 
+
 function Navbar({ timeFormatted, setTimeFormatted, isDigital, setIsDigital }: NavbarProps) {
     return (
         <nav className="z-[100] fixed w-full">

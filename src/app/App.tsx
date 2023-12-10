@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import ClockArea from '../components/ClockArea';
 import Footer from '../components/Footer';
+import GlobeArea from '../components/GlobeArea';
 import './App.css';
 
 function App() {
@@ -49,8 +50,13 @@ function App() {
   return (
     <div className="App">
       <Navbar timeFormatted={timeFormatted} setTimeFormatted={setTimeFormatted} isDigital={isDigital} setIsDigital={setIsDigital} />
-      <ClockArea isDigital={isDigital} time={time} timeFormatted={timeFormatted} day={day} />
-      <Footer/>
+      <div className='grid md:grid-cols-2 gap-0 h-[inherit] border-0'>
+        <div className='h-[inherit]'>
+          <ClockArea isDigital={isDigital} time={time} timeFormatted={timeFormatted} day={day} />
+        </div>
+        <GlobeArea />
+      </div>
+      <Footer />
     </div>
   );
 }

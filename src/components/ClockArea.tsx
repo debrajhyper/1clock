@@ -11,7 +11,7 @@ type ClockAreaProps = {
 
 function ClockArea({ isDigital, time, timeFormatted, day }: ClockAreaProps) {
     return (
-        <main className="clock_area">
+        <main className="clock_area border-0">
             <div className={isDigital ? 'digital' : 'analog'}>
                 <div className="circle"></div>
                 <div className="shape">

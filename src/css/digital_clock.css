@@ -11,7 +11,7 @@
     /* font-family: 'LED Dot-Matrix', sans-serif; */
     
     position: relative;
-    width: 32em;
+    width: 30em;
     height: 16em;
     /* padding: .4em .9em; */
     z-index: 100;
@@ -31,7 +31,7 @@
         height: 0;
     }
     100% {
-        width: 32em;
+        width: 30em;
         height: 16em;
         
     }
@@ -60,7 +60,7 @@
 }
 
 .digits {
-    font-size: 4em;
+    font-size: 3em;
     font-weight: 400;
     line-height: .8;
     letter-spacing: .2rem;
@@ -78,15 +78,15 @@
     }
     100% {
         opacity: 1;
-        font-size: 4em;
+        font-size: 3em;
     }
 }
 
 @media only screen and (max-width: 800px) {
     /* For tablets: */
     .digital_clock {
-        width: 28em;
-        height: 13em;
+        width: 20em;
+        height: 12em;
         animation: digital_display_tablet 1s ease-in-out;
     }
     @keyframes digital_display_tablet {
@@ -95,15 +95,15 @@
             height: 0;
         }
         100% {
-            width: 28em;
-            height: 13em;
+            width: 20em;
+            height: 12em;
             
         }
     }
     .day {
         /* line-height: .8; */
         letter-spacing: .4rem;
-        font-size: 1.6em;
+        font-size: 1em;
         animation: day_display_tablet 1s ease-in-out;
     }
     
@@ -117,12 +117,12 @@
         }
         100% {
             opacity: 1;
-            font-size: 1.6em;
+            font-size: 1em;
         }
     }
     
     .digits {
-        font-size: 3em;
+        font-size: 2em;
         font-weight: 400;
         line-height: .8;
         letter-spacing: .2rem;
@@ -139,7 +139,7 @@
         }
         100% {
             opacity: 1;
-            font-size: 3em;
+            font-size: 2em;
         }
     }
 }
@@ -147,7 +147,7 @@
 @media only screen and (max-width: 500px) {
     /* For mobile: */
     .digital_clock {
-        width: 22em;
+        width: 20em;
         height: 12em;
         animation: digital_display_mobile 1s ease-in-out;
     }
@@ -157,7 +157,7 @@
             height: 0;
         }
         100% {
-            width: 22em;
+            width: 20em;
             height: 12em;
             
         }
@@ -184,7 +184,7 @@
     }
     
     .digits {
-        font-size: 2.6em;
+        font-size: 2em;
         font-weight: 400;
         line-height: .8;
         letter-spacing: .2rem;
@@ -201,7 +201,7 @@
         }
         100% {
             opacity: 1;
-            font-size: 2.6em;
+            font-size: 2em;
         }
     }
 }

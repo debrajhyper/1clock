@@ -17,7 +17,7 @@ function Digital({ time, timeFormatted, day }: Clock) {
 
     return (
         <section className="digital_clock">
-            <p className='day'>{day}</p>
+            {/* <p className='day'>{day}</p> */}
             <p className='digits'>{formattedTime}</p>
         </section>
     )

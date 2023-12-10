@@ -26,7 +26,7 @@ function Footer() {
 
     return (
         <>
-            <div className="fixed top-[80%] -left-[85%] inset-0 flex items-center justify-center">
+            <div className="fixed top-[90%] left-[5%] w-[min-content] h-[min-content]">
                 <button
                     type="button"
                     onClick={openModal}
