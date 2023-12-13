@@ -37,3 +37,20 @@
   font-family: 'LED Dot-Matrix', sans-serif !important;
   font-weight: 200;
 }
+
+
+
+@media (min-width: 1200px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+    opacity: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 0px;
+  }
+}

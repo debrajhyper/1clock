@@ -4,6 +4,7 @@ import ClockArea from '../components/ClockArea';
 import Footer from '../components/Footer';
 import GlobeArea from '../components/GlobeArea';
 import './App.css';
+import TimeZones from '../components/TimeZoneList';
 
 function App() {
   const [time, setTime] = useState({
@@ -56,6 +57,7 @@ function App() {
         </div>
         <GlobeArea />
       </div>
+      <TimeZones />
       <Footer />
     </div>
   );
