@@ -82,7 +82,7 @@ const countryTimeZone = [
 function TimeZoneList() {
     return (
         <div className="fixed top-[50%] right-0 -translate-y-2/4 h-5/6 my-2 border-0 flex justify-center items-center overflow-y-scroll">
-            <TimeZone countryTimeZone={countryTimeZone} />
+            <TimeZone />
         </div>
     )
 }

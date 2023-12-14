@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import Globe, { GlobeMethods } from 'react-globe.gl';
 import geoData from '../utils/customGeo.json'
 import CountryData from '../utils/countries.json'
+import { useClockStore } from "../db/store";
 
 interface CountryPolygon {
     properties?: {
@@ -13,6 +14,7 @@ interface CountryPolygon {
 const dynamicWidth = window.innerWidth >= 1024 ? 600 : window.innerWidth >= 750 ? 350 : 420;
 
 function GlobeArea() {
+    const updateCountryTimezones = useClockStore(state=>state.updateCountryTimezones)
     const globeEl = useRef<GlobeMethods>();
     const [hoverD, setHoverD] = useState<object | null>(null);
     const [pov, setPov] = useState({
@@ -26,46 +28,22 @@ function GlobeArea() {
     });
 
 
-    function getCountryTime(timeZone: any) {
-        // Default to local time if no options provided
-        if (!timeZone) {
-            return new Date().toLocaleString();
-        }
-
-        try {
-            const formatter = new Intl.DateTimeFormat('en-US', {
-                timeZone: timeZone,
-                // timeZoneName: options.gmtName,
-                timeStyle: 'long',
-            });
-
-            // Use GMT offset if provided
-            // if (options.gmtOffset !== undefined) {
-            //     const gmtOffsetInMinutes = options.gmtOffset * 60;
-            //     return new Date(Date.now() + gmtOffsetInMinutes * 60000).toLocaleString();
-            // }
-
-            return formatter.format(new Date());
-
-        } catch (error: any) {
-            console.error('Error:', error?.message);
-            return 'Invalid options';
-        }
-    }
-
-
     function onCountryClick(polygon: CountryPolygon, event: MouseEvent, { lat, lng, altitude }: { lat: number; lng: number; altitude: number; }) {
         // console.log(polygon, event, { lat, lng, altitude })
         // console.log(polygon?.properties?.postal);
 
-        const co1 = CountryData.find(c => c.iso2 === polygon?.properties?.iso_a2 ? c : null)
-        const timezones = co1?.timezones
-        const timezoneLength = timezones ? timezones.length : 0;
-        console.log('country time Zone -> ', timezoneLength, timezones);
-
-        for (let i = 0; i < timezoneLength; i++) {
-            console.log(`Time Zone ${i} -> `, getCountryTime(timezones?.[i]?.zoneName))
+        const country = CountryData.find(c => c.iso2 === polygon?.properties?.iso_a2 ? c : null)
+        const countryTimezones = country?.timezones
+        console.log('country time zones -> ', countryTimezones)
+        if (countryTimezones) {
+            updateCountryTimezones(countryTimezones);
         }
+        // const timezoneLength = timezones ? timezones.length : 0;
+        // console.log('country time Zone -> ', timezoneLength, timezones);
+
+        // for (let i = 0; i < timezoneLength; i++) {
+        //     console.log(`Time Zone ${i} -> `, getCountryTime(timezones?.[i]?.zoneName))
+        // }
 
 
         setPov({

@@ -1,11 +1,15 @@
 import { Switch } from '@headlessui/react'
+import { useClockStore } from '../db/store'
 
-function SwitchType({ isDigital, setIsDigital }: SwitchType) {
+function SwitchType() {
+    const isDigital = useClockStore(store => store.isDigital)
+    const updateIsDigital = useClockStore(store => store.updateIsDigital)
+
     return (
         <div className="py-16">
             <Switch
                 checked={isDigital}
-                onChange={setIsDigital}
+                onChange={updateIsDigital}
                 title={isDigital ? 'Switch to Analog Clock' : 'Switch to Digital Clock'}
                 className={`${isDigital ? 'bg-purple-850' : 'bg-purple-1000'} m-2
                 relative inline-flex h-[29px] w-[61px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white/62`}

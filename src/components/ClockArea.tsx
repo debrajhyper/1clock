@@ -1,15 +1,11 @@
 import Analog from "./Analog"
 import Digital from "./Digital"
 import '../css/clock_area.css'
+import { useClockStore } from "../db/store"
 
-type ClockAreaProps = {
-    isDigital: boolean,
-    time: Clock['time'],
-    timeFormatted: Clock['timeFormatted'],
-    day: Clock['day']
-}
+function ClockArea() {
+    const isDigital = useClockStore(state => state.isDigital)
 
-function ClockArea({ isDigital, time, timeFormatted, day }: ClockAreaProps) {
     return (
         <main className="clock_area border-0">
             <div className={isDigital ? 'digital' : 'analog'}>
@@ -18,7 +14,7 @@ function ClockArea({ isDigital, time, timeFormatted, day }: ClockAreaProps) {
                     <div className="triangle"></div>
                 </div>
                 {
-                    isDigital ? <Digital time={time} timeFormatted={timeFormatted} day={day} /> : <Analog time={time} />
+                    isDigital ? <Digital /> : <Analog />
                 }
             </div>
         </main>

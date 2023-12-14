@@ -1,6 +1,11 @@
 import '../css/digital_clock.css';
+import { useClockStore } from '../db/store';
 
-function Digital({ time, timeFormatted, day }: Clock) {
+function Digital() {
+    const time = useClockStore(state => state.time)
+    const timeFormatted = useClockStore(state => state.timeFormatted)
+    const day = useClockStore(state => state.day)
+
     const { hours, minutes, seconds } = time
 
     const convertToTwoDigit = (number: number) => {

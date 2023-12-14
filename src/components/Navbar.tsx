@@ -1,16 +1,11 @@
 import SwitchPeriod from "./SwitchPeriod"
 import SwitchType from "./SwitchType"
 import logo from '../icons/clock.png'
+import { useClockStore } from "../db/store"
 
-type NavbarProps = {
-    timeFormatted: SwitchPeriod['timeFormatted'],
-    setTimeFormatted: SwitchPeriod['setTimeFormatted'],
-    isDigital: SwitchType['isDigital'],
-    setIsDigital: SwitchType['setIsDigital'],
-}
-
-
-function Navbar({ timeFormatted, setTimeFormatted, isDigital, setIsDigital }: NavbarProps) {
+function Navbar() {
+    const isDigital = useClockStore(state => state.isDigital)
+    
     return (
         <nav className="z-[100] fixed w-full">
             <div className="relative mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 flex justify-between align-start items-start">
@@ -22,9 +17,9 @@ function Navbar({ timeFormatted, setTimeFormatted, isDigital, setIsDigital }: Na
                 </div>
                 <div className="relative flex h-12 items-center justify-end">
                     {
-                        isDigital && <SwitchPeriod timeFormatted={timeFormatted} setTimeFormatted={setTimeFormatted} />
+                        isDigital && <SwitchPeriod />
                     }
-                    <SwitchType isDigital={isDigital} setIsDigital={setIsDigital} />
+                    <SwitchType />
                 </div>
             </div>
         </nav>

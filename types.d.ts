@@ -8,6 +8,12 @@ type Clock = {
     day?: string
 }
 
+type Time = {
+    hours: number,
+    minutes: number,
+    seconds: number,
+}
+
 // type Clock = {
 //     time: String
 // }
