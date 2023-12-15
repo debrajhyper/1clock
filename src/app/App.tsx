@@ -4,7 +4,7 @@ import ClockArea from '../components/ClockArea';
 import Footer from '../components/Footer';
 import GlobeArea from '../components/GlobeArea';
 import './App.css';
-import TimeZones from '../components/TimeZoneList';
+import TimeZoneList from '../components/TimeZoneList';
 import { useClockStore } from '../db/store';
 import getCountryTime from '../text';
 
@@ -58,12 +58,12 @@ function App() {
     <div className="App">
       <Navbar />
       <div className='grid md:grid-cols-2 gap-0 h-[inherit] border-0'>
-        <div className='h-[inherit]'>
+        <div className='sm:h-[inherit] h-[80vh] flex flex-col justify-between align-middle items-center border-0'>
           <ClockArea />
+          <TimeZoneList />
         </div>
         <GlobeArea />
       </div>
-      <TimeZones />
       <Footer />
     </div>
   );

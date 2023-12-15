@@ -47,12 +47,13 @@ export default function TimeZone() {
 
 
 
+
     return (
-        <div className="w-full px-1 py-2 border-0">
-            <div className="mx-auto w-full max-w-md">
+        <div className={`w-full h-full px-0 py-0 border-0 flex ${countryTimezones?.length > 8 ? 'items-start justify-start' : 'items-center justify-center'}`}>
+            {/* <div className="mx-auto w-full max-w-md"> */}
                 <RadioGroup value={selectedTimeZone} onChange={updateSelectedTimeZone}>
                     <RadioGroup.Label className="sr-only">Country TimeZones</RadioGroup.Label>
-                    <div className="space-y-2 border-0">
+                    <div className='h-full sm:space-y-2 sm:space-x-0 space-x-2 border-0 flex items-start sm:flex-col flex-row '>
                         {
                             countryTimezones.map((timeZone: TimeZone) => (
                                 <RadioGroup.Option
@@ -61,7 +62,7 @@ export default function TimeZone() {
                                     style={myStyle}
                                     title={timeZone?.tzName}
                                     onClick={() => getCountryTime(timeZone)}
-                                    className={({ active, checked }) => `${active ? '' : ''} ${checked ? 'bg-white' : 'bg-[#ffffff1a]'} max-w-[7rem] min-w-[7rem] relative flex cursor-pointer rounded-lg px-2 py-2 shadow-md focus:outline-none snap-center`}>
+                                    className={({ active, checked }) => `${active ? '' : ''} ${checked ? 'bg-white' : 'bg-[#ffffff1a]'} max-w-[7rem] min-w-[7rem] h-full relative flex cursor-pointer rounded-lg px-2 py-2 shadow-md focus:outline-none snap-center`}>
                                     {({ active, checked }) => (
                                         <>
                                             <div className="flex w-full items-center justify-between truncate">
@@ -91,7 +92,7 @@ export default function TimeZone() {
                         }
                     </div>
                 </RadioGroup>
-            </div>
+            {/* </div> */}
         </div>
     )
 }

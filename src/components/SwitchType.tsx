@@ -6,7 +6,7 @@ function SwitchType() {
     const updateIsDigital = useClockStore(store => store.updateIsDigital)
 
     return (
-        <div className="py-16">
+        <div className="py-0">
             <Switch
                 checked={isDigital}
                 onChange={updateIsDigital}

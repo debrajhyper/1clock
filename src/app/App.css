@@ -11,6 +11,10 @@
   src: local('LED Dot-Matrix'), url('../fonts/led-dot-matrix_woff/LED Dot-Matrix.woff') format('woff');
 }
 
+:root {
+  scroll-behavior: smooth;
+}
+
 .App {
   position: relative;
   width: 100svw;
@@ -39,13 +43,16 @@
 }
 
 
-  ::-webkit-scrollbar {
-    width: 8px;
-    background-color: transparent;
-    opacity: 0;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: transparent;
-    border-radius: 0px;
+  @media (min-width: 760px) {
+    .TimeZoneList::-webkit-scrollbar {
+      width: 6px;
+      background-color: #f0f0f025;
+      border-radius: 10px;
+      opacity: 0;
+    }
+  
+    .TimeZoneList::-webkit-scrollbar-thumb {
+      background-color: #ffffff93;
+      border-radius: 10px;
+    }
   }
