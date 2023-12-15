@@ -14,7 +14,7 @@ const glassmorphismStyle: React.CSSProperties = {
 }
 
 function Footer() {
-    let [isOpen, setIsOpen] = useState(true)
+    let [isOpen, setIsOpen] = useState(false)
 
     function closeModal() {
         setIsOpen(false)

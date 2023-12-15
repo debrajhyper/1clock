@@ -1,7 +1,7 @@
 export const ZONE_FIRST = 'ZONE_FIRST'
 export const ZONE_SECOND = 'ZONE_SECOND'
 export const ASIA_CALCUTTA = 'Asia/Calcutta'
-export const STRING_EMPTY = ''
+export const EMPTY_STRING = ''
 export const WEBSITE_NAME = '1clock'
 export const WEBSITE_DESCRIPTION = '1Clock, blending analog charm and digital precision in a sleek glass morphic design, with AM/PM cues for a sophisticated time-telling experience. Redefining elegance in timekeeping.'
 export const WEBSITE_DESIGNED_BY = 'Debraj Karmakar'

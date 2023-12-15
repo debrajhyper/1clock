@@ -24,8 +24,12 @@
   user-select: none;
   font-family: 'LED Dot-Matrix', sans-serif;
   color: white;
-  background: radial-gradient(#252063, #431c64 );
-  background: linear-gradient(160deg, #431c64, #252063 );
+  background: radial-gradient(#252063, #431c64);
+  background: linear-gradient(160deg, #431c64, #252063);
+}
+
+.scene-container {
+  cursor: move;
 }
 
 .scene-container .scene-tooltip {
@@ -40,7 +44,7 @@
   }
 }
 
-  @media (min-width: 760px) {
+@media (min-width: 760px) {
   .TimeZoneList::-webkit-scrollbar {
     width: 6px;
     background-color: #f0f0f025;

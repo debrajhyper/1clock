@@ -13,6 +13,7 @@ type TimeZone = {
 }
 
 type StoreState = {
+    clockLoading: boolean,
     time: Time,
     timeFormatted: boolean,
     isDigital: boolean,
@@ -21,9 +22,10 @@ type StoreState = {
 }
 
 type StoreAction = {
+    toggleClockLoading: () => void,
     updateTime: (setTime: Time) => void,
-    updateTimeFormatted: (setTimeFormatted: StoreState['timeFormatted']) => void,
-    updateIsDigital: (setIsDigital: StoreState['isDigital']) => void,
+    toggleTimeFormatted: () => void,
+    toggleIsDigital: () => void,
     updateCountryTimezones: (setCountryTimezones: StoreState['countryTimezones']) => void,
     updateSelectedTimeZone: (setSelectedTimeZone: StoreState['selectedTimeZone']) => void,
 }

@@ -1,23 +1,28 @@
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import './App.css';
 import { useClockStore } from '../db/store';
 import { getCountryTime } from '../db/store';
-import { ANALOG, DIGITAL, STRING_EMPTY, WEBSITE_NAME } from '../constant/constant';
+import { ANALOG, DIGITAL, EMPTY_STRING, WEBSITE_NAME } from '../constant/constant';
 import Navbar from '../components/Navbar';
-import ClockArea from '../components/ClockArea';
-import GlobeArea from '../components/GlobeArea';
-import TimeZoneList from '../components/TimeZoneList';
 import Footer from '../components/Footer';
+import SuspenseLoading from '../components/SuspenseLoading';
+
+const ClockArea = lazy(() => import('../components/ClockArea'));
+const GlobeArea = lazy(() => import('../components/GlobeArea'));
+const TimeZoneList = lazy(() => import('../components/TimeZoneList'));
 
 function App() {
   const isDigital = useClockStore(state => state.isDigital)
   const selectedTimeZone = useClockStore(state => state.selectedTimeZone)
   const updateTime = useClockStore(state => state.updateTime)
+  const toggleClockLoading = useClockStore(state => state.toggleClockLoading)
 
   useEffect(() => {
     function runClock() {
-      if (selectedTimeZone?.zoneName !== STRING_EMPTY) {
+      if (selectedTimeZone?.zoneName !== EMPTY_STRING) {
+        // toggleClockLoading()
         updateTime(getCountryTime(selectedTimeZone))
+        // toggleClockLoading()
       } else {
         const date = new Date();
         updateTime({
@@ -44,14 +49,18 @@ function App() {
       <Navbar />
       <div className='grid md:grid-cols-2 gap-0 h-[inherit] border-0'>
         <div className='sm:h-[inherit] h-[80vh] flex flex-col justify-between align-middle items-center border-0'>
-          <ClockArea />
-          <TimeZoneList />
+          <Suspense fallback={<SuspenseLoading />}>
+            <ClockArea />
+            <TimeZoneList />
+          </Suspense>
         </div>
-        <GlobeArea />
+        <Suspense fallback={<SuspenseLoading />}>
+          <GlobeArea />
+        </Suspense>
       </div>
       <Footer />
     </div>
-  );
+  )
 }
 
 export default App;

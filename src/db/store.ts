@@ -2,6 +2,7 @@ import { create } from 'zustand'
 import { ASIA_CALCUTTA, EN_US, COLON_SEPARATOR, NO_OF_DIGITS } from '../constant/constant';
 
 export const useClockStore = create<StoreState & StoreAction>((set) => ({
+    clockLoading: false,
     time: {
         hours: 60,
         minutes: 60,
@@ -17,9 +18,11 @@ export const useClockStore = create<StoreState & StoreAction>((set) => ({
         abbreviation: '',
         tzName: '',
     },
+    toggleClockLoading: () => set((state => ({ clockLoading: !state.clockLoading }))),
+    toggleShow: () => set((state) => ({ clockLoading: !state.clockLoading })),
     updateTime: (setTime: Time) => set(() => ({ time: setTime })),
-    updateTimeFormatted: (setTimeFormatted: StoreState['timeFormatted']) => set(() => ({ timeFormatted: setTimeFormatted })),
-    updateIsDigital: (setIsDigital: StoreState['isDigital']) => set(() => ({ isDigital: setIsDigital })),
+    toggleTimeFormatted: () => set((state) => ({ timeFormatted: !state.timeFormatted })),
+    toggleIsDigital: () => set((state) => ({ isDigital: !state.isDigital })),
     updateCountryTimezones: (setCountryTimezones: StoreState['countryTimezones']) => set(() => ({ countryTimezones: setCountryTimezones })),
     updateSelectedTimeZone: (setSelectedTimeZone: StoreState['selectedTimeZone']) => set(() => ({ selectedTimeZone: setSelectedTimeZone })),
 }))

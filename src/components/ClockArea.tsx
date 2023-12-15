@@ -2,9 +2,11 @@ import '../css/clock_area.css'
 import { useClockStore } from "../db/store"
 import Analog from "./Analog"
 import Digital from "./Digital"
+import SuspenseLoading from './SuspenseLoading'
 
 function ClockArea() {
     const isDigital = useClockStore(state => state.isDigital)
+    const clockLoading = useClockStore(state => state.clockLoading)
 
     return (
         <main className="clock_area border-0">

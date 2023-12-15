@@ -49,7 +49,7 @@ function GlobeArea() {
                 globeEl.current.controls().autoRotateSpeed = 0.7;
                 globeEl.current.pointOfView(pov, 800);
                 globeEl.current.controls().maxDistance = 500
-                globeEl.current.controls().minDistance = 280;
+                globeEl.current.controls().minDistance = 270;
                 globeEl.current.controls().enablePointerInteraction = true;
             } else {
                 timeOutId = setTimeout(check, 1000);
