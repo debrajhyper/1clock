@@ -1,35 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import './App.css';
+import { useClockStore } from '../db/store';
+import { getCountryTime } from '../db/store';
+import { ANALOG, DIGITAL, STRING_EMPTY, WEBSITE_NAME } from '../constant/constant';
 import Navbar from '../components/Navbar';
 import ClockArea from '../components/ClockArea';
-import Footer from '../components/Footer';
 import GlobeArea from '../components/GlobeArea';
-import './App.css';
 import TimeZoneList from '../components/TimeZoneList';
-import { useClockStore } from '../db/store';
-import getCountryTime from '../text';
+import Footer from '../components/Footer';
 
 function App() {
-  // const [time, setTime] = useState({
-  //   hours: 60,
-  //   minutes: 60,
-  //   seconds: 60,
-  // })
-  // const [day, setDay] = useState('');
-
-  // const [timeFormatted, setTimeFormatted] = useState(false);
-  // const [isDigital, setIsDigital] = useState(false);
-  const updateTime = useClockStore(state => state.updateTime)
-  const updateDay = useClockStore(state => state.updateDay)
   const isDigital = useClockStore(state => state.isDigital)
-  const countryTimezones = useClockStore(state => state.countryTimezones)
   const selectedTimeZone = useClockStore(state => state.selectedTimeZone)
-  const time = useClockStore(state => state.time)
-  // console.log(countryTimezones, selectedTimeZone)
+  const updateTime = useClockStore(state => state.updateTime)
 
   useEffect(() => {
-    const date = new Date();
-    function getClock() {
-      if (selectedTimeZone?.zoneName !== '') {
+    function runClock() {
+      if (selectedTimeZone?.zoneName !== STRING_EMPTY) {
         updateTime(getCountryTime(selectedTimeZone))
       } else {
         const date = new Date();
@@ -41,17 +28,15 @@ function App() {
       }
     }
 
-    updateDay(date.getDay())
-
     const intervalId = setInterval(() => {
-      getClock()
+      runClock()
     }, 1000);
 
     return () => clearInterval(intervalId);
-  }, [selectedTimeZone, updateDay, updateTime])
+  }, [selectedTimeZone, updateTime])
 
   useEffect(() => {
-    document.title = `${isDigital ? 'Digital' : 'Analog'} - 1clock`
+    document.title = `${isDigital ? DIGITAL : ANALOG} - ${WEBSITE_NAME}`
   }, [isDigital])
 
   return (

@@ -4,16 +4,12 @@
 
 .digital_clock {
     display: flex;
-    /* flex-direction: row; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* font-family: 'LED Dot-Matrix', sans-serif; */
-    
     position: relative;
     width: 30em;
     height: 16em;
-    /* padding: .4em .9em; */
     z-index: 100;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -30,15 +26,15 @@
         width: 0;
         height: 0;
     }
+
     100% {
         width: 30em;
         height: 16em;
-        
+
     }
 }
 
 .day {
-    /* line-height: .8; */
     letter-spacing: .4rem;
     animation: day_display 1s ease-in-out;
     animation-fill-mode: both;
@@ -50,9 +46,11 @@
         opacity: 0;
         font-size: 0;
     }
+
     58% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
         font-size: 2em;
@@ -73,9 +71,11 @@
         opacity: 0;
         font-size: 0;
     }
+
     58% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
         font-size: 3em;
@@ -83,44 +83,27 @@
 }
 
 @media only screen and (max-width: 800px) {
+
     /* For tablets: */
     .digital_clock {
         width: 20em;
         height: 12em;
         animation: digital_display_tablet 1s ease-in-out;
     }
+
     @keyframes digital_display_tablet {
         0% {
             width: 0;
             height: 0;
         }
+
         100% {
             width: 20em;
             height: 12em;
-            
+
         }
     }
-    .day {
-        /* line-height: .8; */
-        letter-spacing: .4rem;
-        font-size: 1em;
-        animation: day_display_tablet 1s ease-in-out;
-    }
-    
-    @keyframes day_display_tablet {
-        0% {
-            opacity: 0;
-            font-size: 0;
-        }
-        58% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-            font-size: 1em;
-        }
-    }
-    
+
     .digits {
         font-size: 2em;
         font-weight: 400;
@@ -128,15 +111,17 @@
         letter-spacing: .2rem;
         animation: digits_display_tablet 1s ease-in-out;
     }
-    
+
     @keyframes digits_display_tablet {
         0% {
             opacity: 0;
             font-size: 0;
         }
+
         58% {
             opacity: 0;
         }
+
         100% {
             opacity: 1;
             font-size: 2em;
@@ -145,44 +130,27 @@
 }
 
 @media only screen and (max-width: 500px) {
+
     /* For mobile: */
     .digital_clock {
         width: 20em;
         height: 12em;
         animation: digital_display_mobile 1s ease-in-out;
     }
+
     @keyframes digital_display_mobile {
         0% {
             width: 0;
             height: 0;
         }
+
         100% {
             width: 20em;
             height: 12em;
-            
+
         }
     }
-    .day {
-        /* line-height: .8; */
-        letter-spacing: .3rem;
-        font-size: 1.5em;
-        animation: day_display_mobile 1s ease-in-out;
-    }
-    
-    @keyframes day_display_mobile {
-        0% {
-            opacity: 0;
-            font-size: 0;
-        }
-        58% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-            font-size: 1.5em;
-        }
-    }
-    
+
     .digits {
         font-size: 2em;
         font-weight: 400;
@@ -190,15 +158,17 @@
         letter-spacing: .2rem;
         animation: digits_display_mobile 1s ease-in-out;
     }
-    
+
     @keyframes digits_display_mobile {
         0% {
             opacity: 0;
             font-size: 0;
         }
+
         58% {
             opacity: 0;
         }
+
         100% {
             opacity: 1;
             font-size: 2em;

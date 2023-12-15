@@ -23,11 +23,14 @@
   transition: all .4s ease-in-out;
   user-select: none;
   font-family: 'LED Dot-Matrix', sans-serif;
-  /* font-family: 'Mukta', sans-serif; */
   color: white;
   background: radial-gradient(#252063, #431c64 );
   background: linear-gradient(160deg, #431c64, #252063 );
-  /* color: #ffffff00; */
+}
+
+.scene-container .scene-tooltip {
+  font-family: 'LED Dot-Matrix', sans-serif !important;
+  font-weight: 200;
 }
 
 /*  disable touch highlighting for mobile screens */
@@ -37,22 +40,16 @@
   }
 }
 
-.scene-container .scene-tooltip {
-  font-family: 'LED Dot-Matrix', sans-serif !important;
-  font-weight: 200;
-}
-
-
   @media (min-width: 760px) {
-    .TimeZoneList::-webkit-scrollbar {
-      width: 6px;
-      background-color: #f0f0f025;
-      border-radius: 10px;
-      opacity: 0;
-    }
-  
-    .TimeZoneList::-webkit-scrollbar-thumb {
-      background-color: #ffffff93;
-      border-radius: 10px;
-    }
+  .TimeZoneList::-webkit-scrollbar {
+    width: 6px;
+    background-color: #f0f0f025;
+    border-radius: 10px;
+    opacity: 0;
   }
+
+  .TimeZoneList::-webkit-scrollbar-thumb {
+    background-color: #ffffff93;
+    border-radius: 10px;
+  }
+}

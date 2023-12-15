@@ -1,7 +1,7 @@
-import Analog from "./Analog"
-import Digital from "./Digital"
 import '../css/clock_area.css'
 import { useClockStore } from "../db/store"
+import Analog from "./Analog"
+import Digital from "./Digital"
 
 function ClockArea() {
     const isDigital = useClockStore(state => state.isDigital)

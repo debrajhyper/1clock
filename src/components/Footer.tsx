@@ -2,6 +2,16 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ReactComponent as Info } from '../icons/info.svg'
 import icon from '../icons/clock.png'
+import { LINKEDIN_URL, WEBSITE_DESCRIPTION, WEBSITE_DESIGNED_BY, WEBSITE_NAME } from '../constant/constant'
+
+const glassmorphismStyle: React.CSSProperties = {
+    background: 'rgba(255, 255, 255, 0.1)',
+    borderRadius: '50 %',
+    backdropFilter: 'blur(15px)',
+    boxShadow: '0 25px 45px 5px rgba(0, 0, 0, 0.3)',
+    border: '1px solid rgba(255, 255, 255, 0.5)',
+    color: 'white'
+}
 
 function Footer() {
     let [isOpen, setIsOpen] = useState(true)
@@ -12,16 +22,6 @@ function Footer() {
 
     function openModal() {
         setIsOpen(true)
-    }
-
-    const glassmorphismStyle: React.CSSProperties = {
-        background: 'rgba(255, 255, 255, 0.1)',
-        borderRadius: '50 %',
-        // textAlign: 'center',
-        backdropFilter: 'blur(15px)',
-        boxShadow: '0 25px 45px 5px rgba(0, 0, 0, 0.3)',
-        border: '1px solid rgba(255, 255, 255, 0.5)',
-        color: 'white'
     }
 
     return (
@@ -49,7 +49,6 @@ function Footer() {
                     >
                         <div className="fixed inset-0 bg-black/25" />
                     </Transition.Child>
-
                     <div className="fixed inset-0 overflow-y-auto">
                         <div className="flex min-h-full items-center justify-center p-4 text-center select-none">
                             <Transition.Child
@@ -67,25 +66,23 @@ function Footer() {
                                         className="font-['Mukta'] text-5xl font-extrabold text-white/40 leading-6 flex items-center"
                                     >
                                         <img src={icon} alt='icon' className="w-10 -mr-4" />
-                                        1clock
+                                        {WEBSITE_NAME}
                                     </Dialog.Title>
                                     <div className="mt-4">
                                         <div>
                                             <p className="text-sm">
-                                                1Clock, blending analog charm and digital precision in a sleek glass morphic design, with AM/PM cues for a sophisticated time-telling experience.
-                                                Redefining elegance in timekeeping.
+                                                {WEBSITE_DESCRIPTION}
                                             </p>
                                             <p className='mt-2 text-sm font-bold text-white/40 tracking-wide'>
                                                 Designed by
                                                 <h3 className='text-xl text-white'>
-                                                    <a className='outline-0' href='https://www.linkedin.com/in/debrajkarmakar010/' target='_blank' rel="noreferrer">
-                                                        Debraj Karmakar
+                                                    <a className='outline-0' href={LINKEDIN_URL} target='_blank' rel="noreferrer">
+                                                        {WEBSITE_DESIGNED_BY}
                                                     </a>
                                                 </h3>
                                             </p>
                                         </div>
                                     </div>
-
                                     <div className="mt-10">
                                         <button
                                             type="button"

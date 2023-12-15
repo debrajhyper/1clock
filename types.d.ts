@@ -1,31 +1,7 @@
-type Clock = {
-    time: {
-        hours: number,
-        minutes: number,
-        seconds: number,
-    },
-    timeFormatted?: boolean,
-    day?: string
-}
-
 type Time = {
     hours: number,
     minutes: number,
     seconds: number,
-}
-
-// type Clock = {
-//     time: String
-// }
-
-type SwitchPeriod = {
-    timeFormatted: boolean,
-    setTimeFormatted: ChangeEvent<HTMLInputElement>
-}
-
-type SwitchType = {
-    isDigital: boolean,
-    setIsDigital: ChangeEvent<HTMLInputElement>
 }
 
 type TimeZone = {
@@ -36,6 +12,18 @@ type TimeZone = {
     tzName: string,
 }
 
-type countryTimeZone = {
-    countryTimeZone: TimeZone[];
+type StoreState = {
+    time: Time,
+    timeFormatted: boolean,
+    isDigital: boolean,
+    countryTimezones: TimeZone[],
+    selectedTimeZone: TimeZone,
+}
+
+type StoreAction = {
+    updateTime: (setTime: Time) => void,
+    updateTimeFormatted: (setTimeFormatted: StoreState['timeFormatted']) => void,
+    updateIsDigital: (setIsDigital: StoreState['isDigital']) => void,
+    updateCountryTimezones: (setCountryTimezones: StoreState['countryTimezones']) => void,
+    updateSelectedTimeZone: (setSelectedTimeZone: StoreState['selectedTimeZone']) => void,
 }
