@@ -11,8 +11,8 @@ function Analog() {
         <section className="analog_clock">
             {
                 clockLoading
-                    ? <SuspenseLoading/>
-                : (
+                    ? <SuspenseLoading />
+                    : (
                         <>
                             <div className="hour_hand" style={{ transform: `rotateZ(${hours * 30}deg)` }} />
                             <div className="min_hand" style={{ transform: `rotateZ(${minutes * 6}deg)` }} />

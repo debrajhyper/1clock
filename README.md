@@ -1,6 +1,13 @@
 # 1Clock fuses analog & digital timekeeping seamlessly. A stunning glassmorphic design showcases the elegance of the analog clock's hour, minute, and second hands. The digital display provides periods indications to keep you on schedule. An immersive time-telling experience combining classical and contemporary design makes 1Clock more than just a clock.
 
 
+[] 1. instant clock time change when timezone switches.
+[] 2. if any delay in changing the timezone useState then show the loader.
+[] 3. add framer motion between 
+    [] 1. analog to digital transition
+    [] 2. circle & triangle color change
+    [] 3. animation on earth rotation
+
 Country data map: https://geojson-maps.ash.ms/
 country-state-city data: https://dr5hn.github.io/countries-states-cities-database/
 

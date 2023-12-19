@@ -33,10 +33,10 @@ function TimeZone() {
 
     function toggleTimeZone(timeZone: TimeZone) {
         toggleClockLoading()
-        setTimeout(() => {
-            updateSelectedTimeZone(timeZone)
-            toggleClockLoading()
-        }, 100);
+        setTimeout(async () => {
+            await updateSelectedTimeZone(timeZone);
+            toggleClockLoading();
+        }, 0);
     }
 
     useEffect(() => {

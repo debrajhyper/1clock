@@ -1,10 +1,12 @@
 import '../css/digital_clock.css';
 import { useClockStore } from '../db/store';
 import { AM, EN_US, PM } from '../constant/constant';
+import SuspenseLoading from './SuspenseLoading';
 
 function Digital() {
     const time = useClockStore(state => state.time)
     const timeFormatted = useClockStore(state => state.timeFormatted)
+    const clockLoading = useClockStore(state => state.clockLoading)
     const { hours, minutes, seconds } = time
 
     const convertToTwoDigit = (number: number) => {
@@ -21,7 +23,9 @@ function Digital() {
 
     return (
         <section className="digital_clock">
-            <p className='digits'>{formattedTime}</p>
+            {
+                clockLoading ? <SuspenseLoading /> : <p className='digits'>{formattedTime}</p>
+            }
         </section>
     )
 }
