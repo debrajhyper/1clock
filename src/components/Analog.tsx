@@ -1,6 +1,7 @@
 import '../css/analog_clock.css';
 import { useClockStore } from '../db/store';
 import SuspenseLoading from './SuspenseLoading';
+import { motion } from "framer-motion";
 
 function Analog() {
     const time = useClockStore(state => state.time)
@@ -8,7 +9,20 @@ function Analog() {
     const { hours, minutes, seconds } = time
 
     return (
-        <section className="analog_clock">
+        <motion.section
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+                duration: 0.3,
+                ease: [0, 0.4, 0.2, 1],
+                scale: {
+                    type: "spring",
+                    damping: 5,
+                    stiffness: 100,
+                    restDelta: 0.001
+                }
+            }}
+            className="analog_clock">
             {
                 clockLoading
                     ? <SuspenseLoading />
@@ -32,7 +46,7 @@ function Analog() {
             <span className="nine">9</span>
             <span className="stick ten"></span>
             <span className="stick eleven"></span>
-        </section>
+        </motion.section>
     )
 }
 

@@ -17,7 +17,7 @@
     backdrop-filter: blur(15px);
     box-shadow: 0 25px 45px 5px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.5);
-    transition: all 1s ease-in-out;
+    /* transition: all 1s ease-in-out; */
     animation: digital_display 1s ease-in-out;
 }
 
@@ -41,7 +41,7 @@
     line-height: .8;
     letter-spacing: .2rem;
     animation: digits_display 1s ease-in-out;
-    transition: transform .7s ease-in-out;
+    /* transition: transform .7s ease-in-out; */
 }
 
 @keyframes digits_display0 {

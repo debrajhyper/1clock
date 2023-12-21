@@ -13,7 +13,7 @@
     backdrop-filter: blur(15px);
     box-shadow: 0 25px 45px 5px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.5);
-    transition: all 1s ease-in-out;
+    /* transition: all 1s ease-in-out; */
     animation: analog_display 1s ease-in-out;
 }
 
@@ -108,7 +108,7 @@
     animation: digit_display 1s linear;
 }
 
-@keyframes digit_display {
+@keyframes digit_display0 {
     0% {
         opacity: 0;
     }

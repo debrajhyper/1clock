@@ -2,6 +2,7 @@ import '../css/digital_clock.css';
 import { useClockStore } from '../db/store';
 import { AM, EN_US, PM } from '../constant/constant';
 import SuspenseLoading from './SuspenseLoading';
+import { motion } from "framer-motion";
 
 function Digital() {
     const time = useClockStore(state => state.time)
@@ -22,11 +23,25 @@ function Digital() {
         : `${convertToTwoDigit(hours)}:${convertToTwoDigit(minutes)}:${convertToTwoDigit(seconds)}`;
 
     return (
-        <section className="digital_clock">
+        <motion.section 
+        initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.5 }}
+            transition={{
+                duration: 0.3,
+                ease: [0, 0.4, 0.2, 1],
+                scale: {
+                    type: "spring",
+                    damping: 5,
+                    stiffness: 100,
+                    restDelta: 0.001
+                }
+            }}
+        className="digital_clock">
             {
                 clockLoading ? <SuspenseLoading /> : <p className='digits'>{formattedTime}</p>
             }
-        </section>
+        </motion.section>
     )
 }
 
