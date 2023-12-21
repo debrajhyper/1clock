@@ -12,7 +12,6 @@ function TimeZone() {
     const countryTimezones = useClockStore(state => state.countryTimezones)
     const selectedTimeZone = useClockStore(state => state.selectedTimeZone)
     const updateSelectedTimeZone = useClockStore(state => state.updateSelectedTimeZone)
-    const toggleClockLoading = useClockStore(state => state.toggleClockLoading)
 
     function zoneNameFormatter(zoneName: string, type: string) {
         let formattedName: string = '';
@@ -32,11 +31,7 @@ function TimeZone() {
     }
 
     function toggleTimeZone(timeZone: TimeZone) {
-        toggleClockLoading()
-        setTimeout(async () => {
-            await updateSelectedTimeZone(timeZone);
-            toggleClockLoading();
-        }, 0);
+        updateSelectedTimeZone(timeZone);
     }
 
     useEffect(() => {

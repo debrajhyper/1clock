@@ -17,7 +17,7 @@
     animation: analog_display 1s ease-in-out;
 }
 
-@keyframes analog_display {
+@keyframes analog_display0 {
     0% {
         width: 0;
         height: 0;
@@ -53,7 +53,7 @@
     /* transition: transform .5s ease-in-out; */
 }
 
-@keyframes hands_display {
+@keyframes hands_display0 {
     0% {
         opacity: 0;
     }

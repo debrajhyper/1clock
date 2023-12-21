@@ -20,9 +20,7 @@ function App() {
   useEffect(() => {
     function runClock() {
       if (selectedTimeZone?.zoneName !== EMPTY_STRING) {
-        // toggleClockLoading()
         updateTime(getCountryTime(selectedTimeZone))
-        // toggleClockLoading()
       } else {
         const date = new Date();
         updateTime({
@@ -38,7 +36,17 @@ function App() {
     }, 1000);
 
     return () => clearInterval(intervalId);
-  }, [selectedTimeZone, updateTime])
+  }, [selectedTimeZone, toggleClockLoading, updateTime])
+
+  useEffect(() => {
+    if (selectedTimeZone?.zoneName !== EMPTY_STRING) {
+      toggleClockLoading()
+      updateTime(getCountryTime(selectedTimeZone))
+      setTimeout(() => {
+        toggleClockLoading()
+      }, 0);
+    }
+  }, [selectedTimeZone, toggleClockLoading, updateTime])
 
   useEffect(() => {
     document.title = `${isDigital ? DIGITAL : ANALOG} - ${WEBSITE_NAME}`

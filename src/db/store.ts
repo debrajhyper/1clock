@@ -4,9 +4,9 @@ import { ASIA_CALCUTTA, EN_US, COLON_SEPARATOR, NO_OF_DIGITS } from '../constant
 export const useClockStore = create<StoreState & StoreAction>((set) => ({
     clockLoading: false,
     time: {
-        hours: 60,
-        minutes: 60,
-        seconds: 60,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
     },
     timeFormatted: false,
     isDigital: false,
@@ -37,9 +37,9 @@ export function getCountryTime(timeZone: TimeZone) {
         timeZone: zoneName,
     };
     let setTime = {
-        hours: 60,
-        minutes: 60,
-        seconds: 60,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
     }
 
     // Check if the user's browser timezone matches the provided timezone

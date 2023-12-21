@@ -21,7 +21,7 @@
     animation: digital_display 1s ease-in-out;
 }
 
-@keyframes digital_display {
+@keyframes digital_display0 {
     0% {
         width: 0;
         height: 0;
@@ -34,28 +34,6 @@
     }
 }
 
-.day {
-    letter-spacing: .4rem;
-    animation: day_display 1s ease-in-out;
-    animation-fill-mode: both;
-    transition: transform .7s ease-in-out;
-}
-
-@keyframes day_display {
-    0% {
-        opacity: 0;
-        font-size: 0;
-    }
-
-    58% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-        font-size: 2em;
-    }
-}
 
 .digits {
     font-size: 3em;
@@ -66,7 +44,7 @@
     transition: transform .7s ease-in-out;
 }
 
-@keyframes digits_display {
+@keyframes digits_display0 {
     0% {
         opacity: 0;
         font-size: 0;
