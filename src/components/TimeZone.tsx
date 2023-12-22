@@ -44,12 +44,12 @@ function TimeZone() {
     }, [countryTimezones, updateSelectedTimeZone])
 
     return (
-        <div className={`w-full h-full px-0 py-2 border-0 flex ${countryTimezones?.length > 8 ? 'items-start justify-start' : 'items-center justify-center'}`}>
+        <div className={`w-full h-full px-0 md:py-0 py-1 border-0 flex ${isMobile ? countryTimezones?.length > 4 ? 'items-start justify-start' : 'items-center justify-center' : countryTimezones?.length > 8 ? 'items-start justify-start' : 'items-center justify-center'}`}>
             <RadioGroup value={selectedTimeZone} onChange={(timeZone) => toggleTimeZone(timeZone)}>
                 <RadioGroup.Label className="sr-only">Country TimeZones</RadioGroup.Label>
                 <motion.div
                     transition={{ staggerChildren: 0.4 }}
-                    className='h-full sm:space-y-2 sm:space-x-0 space-x-2 border-0 flex items-start sm:flex-col flex-row '>
+                    className='h-full md:space-y-2 md:space-x-0 space-x-2 border-0 flex items-start md:flex-col flex-row '>
                     {
                         countryTimezones.map((timeZone: TimeZone, index: Key | undefined | null) => (
                             <motion.div

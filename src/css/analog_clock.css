@@ -7,11 +7,11 @@
     width: 14em;
     height: 14em;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1), url(https://grainy-gradients.vercel.app/noise.svg);
     border-radius: 50%;
     text-align: center;
     backdrop-filter: blur(15px);
-    box-shadow: 0 25px 45px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 25px 45px 5px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.5);
     /* transition: all 1s ease-in-out; */
     animation: analog_display 1s ease-in-out;

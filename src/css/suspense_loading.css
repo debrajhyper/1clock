@@ -1,0 +1,48 @@
+:root {
+    --loading_color: #a345ee;
+}
+
+.progress {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 3px solid var(--loading_color);
+    box-sizing: content-box;
+}
+
+.progress:before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 16.3px;
+    top: 3.8px;
+    left: 18.2px;
+    background: var(--loading_color);
+    border-radius: 5px;
+    transform-origin: 0.95px 15.8px;
+    animation: progress-t59zy9 1.6s linear infinite;
+}
+
+.progress:after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 10.6px;
+    top: 9.6px;
+    left: 18.2px;
+    background: var(--loading_color);
+    border-radius: 5px;
+    transform-origin: 0.95px 10.1px;
+    animation: progress-t59zy9 9.600000000000001s linear infinite;
+}
+
+@keyframes progress-t59zy9 {
+    0% {
+        tranform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

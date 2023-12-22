@@ -31,6 +31,7 @@ function GlobeArea() {
     function onCountryClick(polygon: CountryPolygon, event: MouseEvent, { lat, lng, altitude }: { lat: number; lng: number; altitude: number; }) {
         const country = CountryData.find(c => c.iso2 === polygon?.properties?.iso_a2 ? c : null)
         const countryTimezones = country?.timezones
+        console.log(countryTimezones)
         if (countryTimezones) {
             updateCountryTimezones(countryTimezones);
         }
@@ -45,7 +46,7 @@ function GlobeArea() {
         let timeOutId: string | number | NodeJS.Timeout | undefined;
         (function check() {
             if (globeEl?.current) {
-                globeEl.current.controls().autoRotate = true;
+                globeEl.current.controls().autoRotate = false;
                 globeEl.current.controls().autoRotateSpeed = 0.7;
                 globeEl.current.pointOfView(pov, 800);
                 globeEl.current.controls().maxDistance = 500
@@ -79,7 +80,7 @@ function GlobeArea() {
         <div className="globe_area border-0 flex justify-start items-center">
             <Globe
                 ref={globeEl}
-                globeImageUrl={"../images/io5.jpg"}
+                globeImageUrl={"../images/io1.png"}
                 lineHoverPrecision={0}
                 width={globeDimensions.width}
                 height={globeDimensions.height}
@@ -87,9 +88,9 @@ function GlobeArea() {
                 showAtmosphere={true}
                 onPolygonClick={onCountryClick}
                 polygonsData={geoData?.features}
-                polygonCapColor={d => d === hoverD ? '#3e8beb' : '#3b82f680'}
+                polygonCapColor={d => d === hoverD ? '#4981f2' : '#0043c1'}
                 polygonSideColor={() => 'rgba(0, 0, 0, 0)'}
-                polygonStrokeColor={() => '#3e8beb'}
+                polygonStrokeColor={() => '#4981f2'}
                 polygonLabel={({ properties: c }: any) => `<b class='polygon_label'>${c.name} (${c.postal})</b>`}
                 onPolygonHover={setHoverD}
                 polygonsTransitionDuration={300}

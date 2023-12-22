@@ -10,7 +10,7 @@ function SwitchPeriod() {
             checked={timeFormatted}
             onChange={toggleTimeFormatted}
             title={timeFormatted ? "Switch to 24hrs" : "Switch to 12hrs"}
-            className={`${timeFormatted ? 'bg-purple-850' : 'bg-purple-1000'} m-2 relative inline-flex h-[29px] w-[61px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white/62`}
+            className={`${timeFormatted ? 'bg-purple-700' : 'bg-purple-950'} m-2 relative inline-flex h-[29px] w-[61px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white/62`}
         >
             <span
                 aria-hidden="true"

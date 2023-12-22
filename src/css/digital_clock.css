@@ -11,11 +11,11 @@
     width: 30em;
     height: 16em;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1), url(https://grainy-gradients.vercel.app/noise.svg);
     border-radius: 10px;
     text-align: center;
     backdrop-filter: blur(15px);
-    box-shadow: 0 25px 45px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 25px 45px 5px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.5);
     /* transition: all 1s ease-in-out; */
     animation: digital_display 1s ease-in-out;
@@ -69,7 +69,7 @@
         animation: digital_display_tablet 1s ease-in-out;
     }
 
-    @keyframes digital_display_tablet {
+    @keyframes digital_display_tablet0 {
         0% {
             width: 0;
             height: 0;
@@ -90,7 +90,7 @@
         animation: digits_display_tablet 1s ease-in-out;
     }
 
-    @keyframes digits_display_tablet {
+    @keyframes digits_display_tablet0 {
         0% {
             opacity: 0;
             font-size: 0;
@@ -116,7 +116,7 @@
         animation: digital_display_mobile 1s ease-in-out;
     }
 
-    @keyframes digital_display_mobile {
+    @keyframes digital_display_mobile0 {
         0% {
             width: 0;
             height: 0;
@@ -137,7 +137,7 @@
         animation: digits_display_mobile 1s ease-in-out;
     }
 
-    @keyframes digits_display_mobile {
+    @keyframes digits_display_mobile0 {
         0% {
             opacity: 0;
             font-size: 0;
