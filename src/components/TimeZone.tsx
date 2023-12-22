@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useClockStore, getCountryTime } from '../db/store'
 import { EMPTY_SEPARATOR, EMPTY_STRING, UNDERSCORE_SEPARATOR, ZONE_FIRST, ZONE_SECOND } from '../constant/constant'
 import { RadioGroup } from '@headlessui/react'
+import { motion, Variants } from "framer-motion";
 
 const myStyle = {
     backdropFilter: 'blur(10px)',
@@ -41,21 +42,29 @@ function TimeZone() {
     }, [countryTimezones, updateSelectedTimeZone])
 
     return (
-        <div className={`w-full h-full px-0 py-0 border-0 flex ${countryTimezones?.length > 8 ? 'items-start justify-start' : 'items-center justify-center'}`}>
+        <div className={`w-full h-full px-0 py-2 border-0 flex ${countryTimezones?.length > 8 ? 'items-start justify-start' : 'items-center justify-center'}`}>
             <RadioGroup value={selectedTimeZone} onChange={(timeZone) => toggleTimeZone(timeZone)}>
                 <RadioGroup.Label className="sr-only">Country TimeZones</RadioGroup.Label>
                 <div className='h-full sm:space-y-2 sm:space-x-0 space-x-2 border-0 flex items-start sm:flex-col flex-row '>
                     {
-                        countryTimezones.map((timeZone: TimeZone) => (
-                            <RadioGroup.Option
-                                key={timeZone?.zoneName}
-                                value={timeZone}
-                                style={myStyle}
-                                title={timeZone?.tzName}
-                                onClick={() => getCountryTime(timeZone)}
-                                className={({ active, checked }) => `${active ? '' : ''} ${checked ? 'bg-white' : 'bg-[#ffffff1a]'} max-w-[7rem] min-w-[7rem] h-full relative flex cursor-pointer rounded-lg px-2 py-2 shadow-md focus:outline-none snap-center`}>
-                                {({ checked }) => (
-                                    <>
+                        countryTimezones.map((timeZone: TimeZone, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: index*40, }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 300,
+                                    damping: 24
+                                }}
+                            >
+                                <RadioGroup.Option
+                                    value={timeZone}
+                                    style={myStyle}
+                                    title={timeZone?.tzName}
+                                    onClick={() => getCountryTime(timeZone)}
+                                    className={({ active, checked }) => `${active ? '' : ''} ${checked ? 'bg-white' : 'bg-[#ffffff1a]'} max-w-[7rem] min-w-[7rem] h-full relative flex cursor-pointer rounded-lg px-2 py-2 shadow-md focus:outline-none snap-center`}>
+                                    {({ checked }) => (
                                         <div className="flex w-full items-center justify-between truncate">
                                             <div className="flex items-center">
                                                 <div className="text-xs">
@@ -76,9 +85,9 @@ function TimeZone() {
                                                 </div>
                                             </div>
                                         </div>
-                                    </>
-                                )}
-                            </RadioGroup.Option>
+                                    )}
+                                </RadioGroup.Option>
+                            </motion.div>
                         ))
                     }
                 </div>
