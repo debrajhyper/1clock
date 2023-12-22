@@ -1,8 +1,9 @@
-import { useEffect } from 'react'
+import { Key, useEffect } from 'react'
+import { motion } from "framer-motion";
+import { useMediaQuery } from '../hooks/useMediaQuery';
 import { useClockStore, getCountryTime } from '../db/store'
-import { EMPTY_SEPARATOR, EMPTY_STRING, UNDERSCORE_SEPARATOR, ZONE_FIRST, ZONE_SECOND } from '../constant/constant'
+import { EMPTY_SEPARATOR, EMPTY_STRING, GRID_CHANGE_ON_MOBILE, UNDERSCORE_SEPARATOR, ZONE_FIRST, ZONE_SECOND } from '../constant/constant'
 import { RadioGroup } from '@headlessui/react'
-import { motion, Variants } from "framer-motion";
 
 const myStyle = {
     backdropFilter: 'blur(10px)',
@@ -13,6 +14,7 @@ function TimeZone() {
     const countryTimezones = useClockStore(state => state.countryTimezones)
     const selectedTimeZone = useClockStore(state => state.selectedTimeZone)
     const updateSelectedTimeZone = useClockStore(state => state.updateSelectedTimeZone)
+    const isMobile = useMediaQuery(GRID_CHANGE_ON_MOBILE)
 
     function zoneNameFormatter(zoneName: string, type: string) {
         let formattedName: string = '';
@@ -45,13 +47,15 @@ function TimeZone() {
         <div className={`w-full h-full px-0 py-2 border-0 flex ${countryTimezones?.length > 8 ? 'items-start justify-start' : 'items-center justify-center'}`}>
             <RadioGroup value={selectedTimeZone} onChange={(timeZone) => toggleTimeZone(timeZone)}>
                 <RadioGroup.Label className="sr-only">Country TimeZones</RadioGroup.Label>
-                <div className='h-full sm:space-y-2 sm:space-x-0 space-x-2 border-0 flex items-start sm:flex-col flex-row '>
+                <motion.div
+                    transition={{ staggerChildren: 0.4 }}
+                    className='h-full sm:space-y-2 sm:space-x-0 space-x-2 border-0 flex items-start sm:flex-col flex-row '>
                     {
-                        countryTimezones.map((timeZone: TimeZone, index) => (
+                        countryTimezones.map((timeZone: TimeZone, index: Key | undefined | null) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, y: index*40, }}
-                                animate={{ opacity: 1, y: 0 }}
+                                initial={{ opacity: 0, y: isMobile ? 0 : 40, x: isMobile ? 40 : 0 }}
+                                animate={{ opacity: 1, y: 0, x: 0 }}
                                 transition={{
                                     type: "spring",
                                     stiffness: 300,
@@ -90,7 +94,7 @@ function TimeZone() {
                             </motion.div>
                         ))
                     }
-                </div>
+                </motion.div>
             </RadioGroup>
         </div>
     )

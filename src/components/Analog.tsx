@@ -1,7 +1,7 @@
 import '../css/analog_clock.css';
+import { motion } from "framer-motion";
 import { useClockStore } from '../db/store';
 import SuspenseLoading from './SuspenseLoading';
-import { motion } from "framer-motion";
 
 function Analog() {
     const time = useClockStore(state => state.time)
