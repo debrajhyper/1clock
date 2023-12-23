@@ -8,7 +8,10 @@ Your Global Time Hub with 3D Globe Visualization
 <br/>
 
 ## 📑 About the project
-    1Clock, a sleek clock website featuring customizable digital and analog clocks. Immerse yourself in a 3D globe, effortlessly exploring time zones by clicking on any country. Experience the art of timekeeping with the visually captivating design. Your go-to for an innovative and aesthetic clock experience!
+    1Clock, a sleek clock website featuring customizable digital and analog clocks. 
+    Immerse yourself in a 3D globe, effortlessly exploring time zones by clicking on any country. 
+    Experience the art of timekeeping with the visually captivating design. 
+    Your go-to for an innovative and aesthetic clock experience!
 
 ## ✨ Key Features
 
