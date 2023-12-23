@@ -80,7 +80,7 @@ function GlobeArea() {
         <div className="globe_area border-0 flex justify-start items-center">
             <Globe
                 ref={globeEl}
-                globeImageUrl={"../images/io2.png"}
+                globeImageUrl={"../images/globe.webp"}
                 lineHoverPrecision={0}
                 width={globeDimensions.width}
                 height={globeDimensions.height}
