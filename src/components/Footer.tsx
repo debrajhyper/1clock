@@ -74,7 +74,7 @@ function Footer() {
                                         <p className="text-sm">
                                             {WEBSITE_DESCRIPTION}
                                         </p>
-                                        <div className='flex justify-between items-end pr-8 mt-4'>
+                                        <div className='flex justify-between items-end pr-4 mt-4'>
                                             <p className='mt-2 text-sm font-bold text-white/40 tracking-wide'>
                                                 Designed by
                                                 <h3 className='text-xl text-white'>
