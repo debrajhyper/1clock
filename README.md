@@ -4,6 +4,7 @@ Your Global Time Hub with 3D Globe Visualization
 
 🌐 Website : [1clock](https://1clock.vercel.app/)
 
+![1clock thumbnail](./public/template.png)
 
 <br/>
 
