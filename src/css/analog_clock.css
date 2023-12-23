@@ -14,19 +14,6 @@
     box-shadow: 0 25px 45px 5px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.5);
     /* transition: all 1s ease-in-out; */
-    animation: analog_display 1s ease-in-out;
-}
-
-@keyframes analog_display0 {
-    0% {
-        width: 0;
-        height: 0;
-    }
-
-    100% {
-        width: 14em;
-        height: 14em;
-    }
 }
 
 .analog_clock::after {
@@ -49,22 +36,7 @@
     border-radius: 20px;
     transform-origin: bottom;
     background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.7));
-    animation: hands_display 1s ease-in-out;
     /* transition: transform .5s ease-in-out; */
-}
-
-@keyframes hands_display0 {
-    0% {
-        opacity: 0;
-    }
-
-    80% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
 }
 
 .hour_hand {
@@ -99,27 +71,6 @@
     width: 1.5px;
     height: 9px;
     background-color: white;
-}
-
-.twelve,
-.three,
-.six,
-.nine {
-    animation: digit_display 1s linear;
-}
-
-@keyframes digit_display0 {
-    0% {
-        opacity: 0;
-    }
-
-    30% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
 }
 
 .twelve {

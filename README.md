@@ -1,70 +1,87 @@
-# 1Clock fuses analog & digital timekeeping seamlessly. A stunning glassmorphic design showcases the elegance of the analog clock's hour, minute, and second hands. The digital display provides periods indications to keep you on schedule. An immersive time-telling experience combining classical and contemporary design makes 1Clock more than just a clock.
+# 1clock
+
+Your Global Time Hub with 3D Globe Visualization
+
+🌐 Website : [1clock](https://1clock.vercel.app/)
 
 
-[] 1. instant clock time change when timezone switches.
-[] 2. if any delay in changing the timezone useState then show the loader.
-[] 3. add framer motion between 
-    [] 1. analog to digital transition
-    [] 2. circle & triangle color change
-    [] 3. animation on earth rotation
+<br/>
 
-Country data map: https://geojson-maps.ash.ms/
-country-state-city data: https://dr5hn.github.io/countries-states-cities-database/
+## 📑 About the project
+    1Clock, a sleek clock website featuring customizable digital and analog clocks. Immerse yourself in a 3D globe, effortlessly exploring time zones by clicking on any country. Experience the art of timekeeping with the visually captivating design. Your go-to for an innovative and aesthetic clock experience!
 
-Certainly! These commit types follow the conventional commit specification, often used with tools like semantic versioning and release management. Here's an explanation of each common commit type in terms of Git commits:
+## ✨ Key Features
 
-build: Changes that affect the build system or external dependencies (e.g., npm, make).
+**Analog and Digital Clocks:** View the time in your country through a classic analog clock or a modern digital clock.
 
-bash
-Copy code
-git commit -m "build: update build configuration"
-chore: Routine tasks, maintenance, or housekeeping chores that are not related to the production code (e.g., updating tasks, tools).
+**Customizable Digital Clock:** Tailor the digital clock to your preference, choosing between AM/PM formats for a personalized timekeeping experience.
 
-bash
-Copy code
-git commit -m "chore: clean up unused files"
-ci: Changes to the continuous integration (CI) configuration and scripts.
+**Interactive 3D Globe:** Immerse yourself in a captivating 3D globe, beautifully mapping all countries. Simply click on any country to instantly access its time and explore the various time zones it encompasses.
 
-bash
-Copy code
-git commit -m "ci: configure Travis CI for automated builds"
-docs: Documentation changes, including both code comments and documentation files.
+**Timezone Information:** Gain insights into all time zones associated with a selected country, allowing you to stay connected and informed.
 
-bash
-Copy code
-git commit -m "docs: update README with usage instructions"
-feat: A new feature introduced to the codebase.
+**Glass Morphism Effect:** Enjoy a sleek and modern design with a glass morphism effect, providing an aesthetic appeal to enhance your time-keeping experience.
 
-bash
-Copy code
-git commit -m "feat: add user authentication feature"
-fix: A bug fix in the code.
+## 👨🏻‍💻 Developer's Talk
+Developed by <a href="https://github.com/debrajhyper">Debraj Karmakar</a>
+<span style="display:inline-flex; justify-content:space-evenly; width:20%;">
+<a href="https://twitter.com/debraj_010">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" width="20px"/>
+</a>
+<a href="https://linkedin.com/in/debraj-karmakar-275570199">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="20px"/>
+</a>
+<a href="https://fb.com/debraj.karmakar.923">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" width="20px"/>
+</a>
+<a href="https://www.behance.net/debrajkarmakar">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/behance/behance-original.svg" width="20px">
+</a>
+</span>
 
-bash
-Copy code
-git commit -m "fix: resolve issue with user login"
-perf: Performance improvements or optimizations in the code.
+>Just wrapped up <a href="https://1clock.vercel.app/">1Clock</a>, a React and three.js project. A compact journey with big learnings. From UI design to clock integration, faced challenges that shaped my skills as a front-end dev. Huge shout out to those who lent a hand. Check out 1Clock, where tech and creativity collide.
 
-bash
-Copy code
-git commit -m "perf: optimize rendering for faster page loads"
-refactor: Code changes that neither fix a bug nor add a feature, typically restructuring or cleaning up code.
+<br/>
 
-bash
-Copy code
-git commit -m "refactor: simplify function implementation"
-revert: Reverting a previous commit.
+## 🚀 Tech Stack
 
-bash
-Copy code
-git commit -m "revert: revert changes made in commit abc123"
-style: Code style changes (e.g., formatting, indentation) that do not affect the logic.
+- HTML
+- CSS
+- Typescript
+- React
+- Custom Hooks
+- Zustand
+- Framer Motion
+- React Globe GL
 
-bash
-Copy code
-git commit -m "style: format code according to style guide"
-test: Adding or modifying tests.
+## 📃 APIs
 
-bash
-Copy code
-git commit -m "test: add unit tests for authentication module"
+[Country Data Map](https://geojson-maps.ash.ms/)
+
+[Country State City Data](https://dr5hn.github.io/countries-states-cities-database/)
+
+<br/>
+
+## 🏃🏻‍♂️ Run Locally
+
+Clone the project
+```
+  $git clone https://github.com/debrajhyper/1clock.git
+```
+
+Go to the project directory
+```
+  cd 1clock
+```
+
+Install dependencies
+```
+  $npm install
+```
+
+Start the server
+```
+  $npm start
+```
+
+<br/>

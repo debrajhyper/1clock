@@ -22,7 +22,7 @@ function Analog() {
                     restDelta: 0.001
                 }
             }}
-            className="analog_clock">
+            className={`${clockLoading ? null : 'analog_clock'}`}>
             {
                 clockLoading
                     ? <SuspenseLoading />

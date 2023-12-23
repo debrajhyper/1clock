@@ -2,7 +2,7 @@ import { lazy, Suspense, useEffect } from 'react';
 import './App.css';
 import { useClockStore } from '../db/store';
 import { getCountryTime } from '../db/store';
-import { ANALOG, DIGITAL, EMPTY_STRING, WEBSITE_NAME } from '../constant/constant';
+import { ANALOG, DIGITAL, EMPTY_STRING, WEBSITE_META_NAME, WEBSITE_NAME } from '../constant/constant';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SuspenseLoading from '../components/SuspenseLoading';
@@ -49,7 +49,7 @@ function App() {
   }, [selectedTimeZone, toggleClockLoading, updateTime])
 
   useEffect(() => {
-    document.title = `${isDigital ? DIGITAL : ANALOG} - ${WEBSITE_NAME}`
+    document.title = `${isDigital ? DIGITAL : ANALOG} | ${WEBSITE_NAME} - ${WEBSITE_META_NAME}`
   }, [isDigital])
 
   return (

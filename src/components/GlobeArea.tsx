@@ -80,7 +80,7 @@ function GlobeArea() {
         <div className="globe_area border-0 flex justify-start items-center">
             <Globe
                 ref={globeEl}
-                globeImageUrl={"../images/io1.png"}
+                globeImageUrl={"../images/io2.png"}
                 lineHoverPrecision={0}
                 width={globeDimensions.width}
                 height={globeDimensions.height}
@@ -88,9 +88,9 @@ function GlobeArea() {
                 showAtmosphere={true}
                 onPolygonClick={onCountryClick}
                 polygonsData={geoData?.features}
-                polygonCapColor={d => d === hoverD ? '#4981f2' : '#0043c1'}
+                polygonCapColor={d => d === hoverD ? '#2867dd' : '#003cad'}
                 polygonSideColor={() => 'rgba(0, 0, 0, 0)'}
-                polygonStrokeColor={() => '#4981f2'}
+                polygonStrokeColor={d => d === hoverD ? '#2867dd' : '#3674f1'}
                 polygonLabel={({ properties: c }: any) => `<b class='polygon_label'>${c.name} (${c.postal})</b>`}
                 onPolygonHover={setHoverD}
                 polygonsTransitionDuration={300}

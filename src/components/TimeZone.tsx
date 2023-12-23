@@ -9,7 +9,6 @@ const myStyle = {
     backdropFilter: 'blur(10px)',
     border: '1px solid rgba(255, 255, 255, 0.5)'
 }
-
 function TimeZone() {
     const countryTimezones = useClockStore(state => state.countryTimezones)
     const selectedTimeZone = useClockStore(state => state.selectedTimeZone)

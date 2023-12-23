@@ -2,7 +2,9 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ReactComponent as Info } from '../icons/info.svg'
 import icon from '../icons/clock.png'
-import { LINKEDIN_URL, WEBSITE_DESCRIPTION, WEBSITE_DESIGNED_BY, WEBSITE_NAME } from '../constant/constant'
+import github_icon from '../icons/github.svg'
+import x_icon from '../icons/x.svg'
+import { GITHUB_URL, LINKEDIN_URL, WEBSITE_DESCRIPTION, WEBSITE_DESIGNED_BY, WEBSITE_NAME, X_URL } from '../constant/constant'
 
 const glassmorphismStyle: React.CSSProperties = {
     background: 'rgba(255, 255, 255, 0.1)',
@@ -69,10 +71,10 @@ function Footer() {
                                         {WEBSITE_NAME}
                                     </Dialog.Title>
                                     <div className="mt-4">
-                                        <div>
-                                            <p className="text-sm">
-                                                {WEBSITE_DESCRIPTION}
-                                            </p>
+                                        <p className="text-sm">
+                                            {WEBSITE_DESCRIPTION}
+                                        </p>
+                                        <div className='flex justify-between items-end pr-8 mt-4'>
                                             <p className='mt-2 text-sm font-bold text-white/40 tracking-wide'>
                                                 Designed by
                                                 <h3 className='text-xl text-white'>
@@ -81,9 +83,17 @@ function Footer() {
                                                     </a>
                                                 </h3>
                                             </p>
+                                            <div className='flex gap-2 justify-center items-center'>
+                                                <a href={GITHUB_URL} target='_blank' rel="noreferrer">
+                                                    <img src={github_icon} alt='github' className='w-6 h-auto' />
+                                                </a>
+                                                <a href={X_URL} target='_blank' rel="noreferrer">
+                                                    <img src={x_icon} alt='twitter' className='w-6 h-auto' />
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="mt-10">
+                                    <div className="mt-4">
                                         <button
                                             type="button"
                                             className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
