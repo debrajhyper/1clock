@@ -67,7 +67,7 @@ function Footer() {
                                         as="h3"
                                         className="font-['Mukta'] text-5xl font-extrabold text-white/40 leading-6 flex items-center"
                                     >
-                                        <img src={icon} alt='icon' className="w-10 -mr-4" />
+                                        <img src={icon} alt='icon' className="w-10 -mr-4" width={40} height={40} />
                                         {WEBSITE_NAME}
                                     </Dialog.Title>
                                     <div className="mt-4">
@@ -85,10 +85,10 @@ function Footer() {
                                             </p>
                                             <div className='flex gap-2 justify-center items-center'>
                                                 <a href={GITHUB_URL} target='_blank' rel="noreferrer">
-                                                    <img src={github_icon} alt='github' className='w-6 h-auto' />
+                                                    <img src={github_icon} alt='github' className='w-6 h-auto' width={25} height={25} />
                                                 </a>
                                                 <a href={X_URL} target='_blank' rel="noreferrer">
-                                                    <img src={x_icon} alt='twitter' className='w-6 h-auto' />
+                                                    <img src={x_icon} alt='twitter' className='w-6 h-auto' width={25} height={25} />
                                                 </a>
                                             </div>
                                         </div>

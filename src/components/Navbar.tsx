@@ -12,7 +12,7 @@ function Navbar() {
             <div className="relative mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 flex justify-between align-start items-start">
                 <div className="pt-3 ml-8">
                     <a href="." className="flex justify-center items-center">
-                        <img src={logo} alt='logo' className="w-7 -mr-3" />
+                        <img src={logo} alt='logo' className="w-7 -mr-3" width={30} height={30} />
                         <h3 className="font-['Mukta'] text-4xl font-extrabold text-white/30">{WEBSITE_NAME}</h3>
                     </a>
                 </div>
