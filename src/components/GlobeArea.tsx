@@ -46,7 +46,7 @@ function GlobeArea() {
         let timeOutId: string | number | NodeJS.Timeout | undefined;
         (function check() {
             if (globeEl?.current) {
-                globeEl.current.controls().autoRotate = false;
+                globeEl.current.controls().autoRotate = true;
                 globeEl.current.controls().autoRotateSpeed = 0.7;
                 globeEl.current.pointOfView(pov, 800);
                 globeEl.current.controls().maxDistance = 500
