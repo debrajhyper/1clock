@@ -39,7 +39,7 @@ function Digital() {
             }}
             className="digital_clock">
             {
-                clockLoading ? <SuspenseLoading /> : <p className='digits'>{formattedTime}</p>
+                clockLoading ? <SuspenseLoading /> : <span className='digits'>{formattedTime}</span>
             }
         </motion.section>
     )

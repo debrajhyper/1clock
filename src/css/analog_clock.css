@@ -2,6 +2,19 @@
     position: relative;
 }
 
+.loading_analog_clock {
+    position: relative;
+    width: 14em;
+    height: 14em;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.1), url(https://grainy-gradients.vercel.app/noise.svg);
+    border-radius: 50%;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 25px 45px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
 .analog_clock {
     position: relative;
     width: 14em;
@@ -60,7 +73,7 @@
     left: 49.6%;
 }
 
-.analog_clock span {
+.loading_analog_clock span, .analog_clock span {
     position: absolute;
     font-size: 1.1rem;
     font-weight: 400;
