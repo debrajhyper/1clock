@@ -37,9 +37,7 @@ function TimeZone() {
     }
 
     useEffect(() => {
-        if (countryTimezones?.length > 0) {
-            updateSelectedTimeZone(countryTimezones[0])
-        }
+        if (countryTimezones?.length > 0) updateSelectedTimeZone(countryTimezones[0])
     }, [countryTimezones, updateSelectedTimeZone])
 
     return (

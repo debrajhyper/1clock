@@ -11,9 +11,7 @@ function Digital() {
     const { hours, minutes, seconds } = time
 
     const convertToTwoDigit = (number: number) => {
-        return number.toLocaleString(EN_US, {
-            minimumIntegerDigits: 2
-        })
+        return number.toLocaleString(EN_US, { minimumIntegerDigits: 2 })
     }
 
     const period = hours >= 12 ? PM : AM;

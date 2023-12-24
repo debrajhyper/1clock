@@ -25,9 +25,8 @@
   font-family: 'LED Dot-Matrix', sans-serif;
   color: white;
   /* background: radial-gradient(#252063, #431c64); */
-  background-image: url('../images/night-sky.png');
-  background: linear-gradient(160deg, #8e2de2 0%, #309df4fe 100%);
-  background: linear-gradient(160deg, #8e2de2, #4a00e0);
+  /* background: linear-gradient(160deg, #8e2de2 0%, #309df4fe 100%); */
+  /* background: linear-gradient(160deg, #8e2de2, #4a00e0); */
   background: linear-gradient(160deg, #662a98, #352f8e);
 }
 

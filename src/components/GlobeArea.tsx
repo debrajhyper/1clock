@@ -31,10 +31,9 @@ function GlobeArea() {
     function onCountryClick(polygon: CountryPolygon, event: MouseEvent, { lat, lng, altitude }: { lat: number; lng: number; altitude: number; }) {
         const country = CountryData.find(c => c.iso2 === polygon?.properties?.iso_a2 ? c : null)
         const countryTimezones = country?.timezones
-        console.log(countryTimezones)
-        if (countryTimezones) {
-            updateCountryTimezones(countryTimezones);
-        }
+
+        if (countryTimezones) updateCountryTimezones(countryTimezones);
+
         setPov({
             lat: lat,
             lng: lng,
@@ -57,11 +56,7 @@ function GlobeArea() {
             }
         })();
 
-        return () => {
-            if (timeOutId) {
-                clearTimeout(timeOutId);
-            }
-        };
+        return () => { if (timeOutId) clearTimeout(timeOutId) };
     }, [pov]);
 
     useEffect(() => {
